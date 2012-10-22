@@ -1,0 +1,9 @@
+/* line 2, ../sass/inicio.scss */
+.thumbnail h3 {
+  border-bottom: 0.01em dotted #EEEEEE;
+  padding-left: 1%;
+}
+/* line 6, ../sass/inicio.scss */
+.thumbnail dd {
+  padding-left: 3%;
+}

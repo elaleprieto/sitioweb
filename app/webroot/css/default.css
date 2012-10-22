@@ -1,0 +1,23 @@
+/* line 1, ../sass/default.scss */
+img.brand {
+  height: 1em;
+}
+
+/* line 4, ../sass/default.scss */
+footer {
+  background-color: #F5F5F5;
+}
+/* line 7, ../sass/default.scss */
+footer dl {
+  padding: 0 10px;
+}
+
+/* line 11, ../sass/default.scss */
+#licencia {
+  text-align: center;
+}
+
+/* line 14, ../sass/default.scss */
+#copyleft {
+  height: 1em;
+}

@@ -30,7 +30,8 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		<?php echo $this -> Html -> charset(); ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title> <?php echo $appDescription ?>:
-			<?php echo $title_for_layout; ?> </title>
+			<?php echo $title_for_layout; ?>
+		</title>
 		<meta name="description" content="La empresa ELEFE es una Distribuidora Mayorista de Artículos para Ferreterías.">
 		<meta name="viewport" content="width=device-width">
 		<style>
@@ -43,7 +44,12 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		echo $this -> Html -> meta('icon');
 		echo $this -> fetch('meta');
 		# Estilos
-		echo $this -> Html -> css(array('bootstrap', 'bootstrap-responsive', 'main', 'default'));
+		echo $this -> Html -> css(array(
+			'bootstrap',
+			'bootstrap-responsive',
+			'main',
+			'default'
+		));
 		echo $this -> fetch('css');
 		# Modernizr
 		echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
@@ -78,69 +84,69 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 							</li>
 							<!-- 			Menú Más				 -->
 							<!-- <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li>
-										<?=$this -> Html -> link('Crear Usuario', '#') ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Solicitar Contraseña', '#') ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Noticias', '#') ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Eventos', '#') ?>
-									</li>
-									<!--
-									<li class="dropdown-submenu">
-									<?=$this -> Html -> link('Energia', array('controller' => 'secciones', 'action' => 'view', 3)) ?>
-									<ul class="dropdown-menu">
-									<li>
-									<?=$this -> Html -> link('Renovables', array('controller' => 'areas', 'action' => 'view', 1)) ?>
-									</li>
-									<li>
-									<?=$this -> Html -> link('Modelo energético', array('controller' => 'areas', 'action' => 'view', 2)) ?>
-									</li>
-									</ul>
-									</li>
-									<li class="divider"></li>
-									<li class="nav-header">Nav header</li>
-									<li><a href="#">Separated link</a></li>
-									<li><a href="#">One more separated link</a></li>
-									-->
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							<li>
+							<?=$this -> Html -> link('Crear Usuario', '#') ?>
+							</li>
+							<li>
+							<?=$this -> Html -> link('Solicitar Contraseña', '#') ?>
+							</li>
+							<li>
+							<?=$this -> Html -> link('Noticias', '#') ?>
+							</li>
+							<li>
+							<?=$this -> Html -> link('Eventos', '#') ?>
+							</li>
+							<!--
+							<li class="dropdown-submenu">
+							<?=$this -> Html -> link('Energia', array('controller' => 'secciones', 'action' => 'view', 3)) ?>
+							<ul class="dropdown-menu">
+							<li>
+							<?=$this -> Html -> link('Renovables', array('controller' => 'areas', 'action' => 'view', 1)) ?>
+							</li>
+							<li>
+							<?=$this -> Html -> link('Modelo energético', array('controller' => 'areas', 'action' => 'view', 2)) ?>
+							</li>
+							</ul>
+							</li>
+							<li class="divider"></li>
+							<li class="nav-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+							-->
 							<!-- 	</ul>
 							</li><!-- 			Fin Menú Más				 -->
 							<!-- 			Menú Admin				 -->
 							<!-- <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li>
-										<?=$this -> Html -> link('Gestión de Usuarios', '#') ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Gestión de Cursos', '#') ?>
-									</li>
-									<li>
-										<?=$this -> Html -> link('Gestión de Docentes', '#') ?>
-									</li>
-									<!--
-									<li class="divider"></li>
-									<li class="nav-header">Nav header</li>
-									<li><a href="#">Separated link</a></li>
-									<li><a href="#">One more separated link</a></li>
-									-->
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+							<li>
+							<?=$this -> Html -> link('Gestión de Usuarios', '#') ?>
+							</li>
+							<li>
+							<?=$this -> Html -> link('Gestión de Cursos', '#') ?>
+							</li>
+							<li>
+							<?=$this -> Html -> link('Gestión de Docentes', '#') ?>
+							</li>
+							<!--
+							<li class="divider"></li>
+							<li class="nav-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+							-->
 							<!-- 	</ul>
 							</li><!-- 			Fin Menú Admin				 -->
 						</ul>
-
+						<!--
 						<form class="navbar-form pull-right">
-							<input class="span2" type="text" placeholder="Usuario">
-							<input class="span2" type="password" placeholder="Contraseña">
-							<button type="submit" class="btn">
-								Ingresar
-							</button>
-						</form>
+						<input class="span2" type="text" placeholder="Usuario">
+						<input class="span2" type="password" placeholder="Contraseña">
+						<button type="submit" class="btn">
+						Ingresar
+						</button>
+						</form> -->
 
 					</div><!--/.nav-collapse -->
 				</div>
@@ -161,7 +167,15 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 				<div class="row">
 					<div id="licencia" class="span12">
 						<p>
-							<?php echo $this -> Html -> link($this -> Html -> image('copyleft_30.png', array('alt' => $appDescription, 'border' => '0', 'id' => 'copyleft')), 'http://www.elefe.com.ar/', array('target' => '_blank', 'escape' => false)); ?>
+							<?php echo $this -> Html -> link($this -> Html -> image('copyleft_30.png', array(
+								'alt' => $appDescription,
+								'border' => '0',
+								'id' => 'copyleft'
+							)), 'http://www.elefe.com.ar/', array(
+								'target' => '_blank',
+								'escape' => false
+							));
+ ?>
 							Copyleft 2012. Sistema desarrollado completamente con Software Libre y respetando los estándares internacionales.
 						</p>
 						<p>
@@ -190,10 +204,16 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		<script>
 			window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')
 		</script>
-		<?php echo $this -> Html -> script(array('vendor/bootstrap.min', 'plugins', 'main')); ?>
+		<?php echo $this -> Html -> script(array(
+				'vendor/bootstrap.min',
+				'plugins',
+				'main'
+			));
+ ?>
 		<?php echo $this -> fetch('script'); ?>
 		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
+			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+			( function(d, t) {
 					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
 					s.parentNode.insertBefore(g, s)
