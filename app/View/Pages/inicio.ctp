@@ -4,6 +4,7 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 <div class="row">
 	<div class="span8">
 		<div class="row">
+			<!-- Titulares	 -->
 			<div class="span8">
 				<div class="hero-unit">
 					<h1><?=$this -> Html -> image('logo.svg', array('class' => 'brand')); ?>
@@ -17,28 +18,28 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 				</div>
 			</div>
 		</div>
-			<ul class="thumbnails">
-				<li class="span4">
-					<div class="thumbnail">
-						<img src="http://lorempixel.com/360/200/abstract" alt="">
-						<h3>¡Oferta!</h3>
-						<p>
-							Thumbnail caption...
-						</p>
-					</div>
-				</li>
-				<li class="span4">
-					<div class="thumbnail">
-						<img src="http://lorempixel.com/360/200/city" alt="">
-						<h3>¡Oferta!</h3>
-						<p>
-							Thumbnail caption...
-						</p>
-					</div>
-				</li>
-			</ul>
+		<ul class="thumbnails">
+			<li class="span4">
+				<div class="thumbnail">
+					<img src="http://lorempixel.com/360/200/abstract" alt="">
+					<h3>¡Oferta!</h3>
+					<p>
+						Thumbnail caption...
+					</p>
+				</div>
+			</li>
+			<li class="span4">
+				<div class="thumbnail">
+					<img src="http://lorempixel.com/360/200/city" alt="">
+					<h3>¡Oferta!</h3>
+					<p>
+						Thumbnail caption...
+					</p>
+				</div>
+			</li>
+		</ul>
 	</div>
-	<div class="span4">
+	<aside class="span4">
 		<ul class="thumbnails">
 			<li class="span4">
 				<div class="thumbnail">
@@ -70,31 +71,6 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 				</div>
 			</li>
 		</ul>
-		<ul class="thumbnails">
-			<li class="span4">
-				<div class="thumbnail">
-					<!-- <img src="http://lorempixel.com/360/200/nature" alt=""> -->
-					<h3 class="muted">Noticias</h3>
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Fecha</th>
-								<th>Evento</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>19/10/2012</td>
-								<td>Ingreso de Bisagras O.H.</td>
-							</tr>
-							<tr>
-								<td>17/10/2012</td>
-								<td>Ingreso de Bulón Cama</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</li>
-		</ul>
-	</div>
+		<?php echo $this -> element('noticias', array("cantidad" => 5)); ?>
+	</aside>
 </div>
