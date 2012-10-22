@@ -8,7 +8,7 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 			<div class="span8">
 				<div class="hero-unit">
 					<h1><?=$this -> Html -> image('logo.svg', array('class' => 'brand')); ?>
-					ELEFE 	<small>Artículos para Ferreterías</small></h1>
+					ELEFE <small>Artículos para Ferreterías</small></h1>
 					<p>
 						ELEFE nace en 1983 de la mano de un compromiso: Proveer Productos de Calidad a sus Clientes, sentando las bases de la empresa actual y liderando el sector Ferretería y Herrajes en la región Litoral.
 					</p>
@@ -18,28 +18,11 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 				</div>
 			</div>
 		</div>
-		<ul class="thumbnails">
-			<li class="span4">
-				<div class="thumbnail">
-					<img src="http://lorempixel.com/360/200/abstract" alt="">
-					<h3>¡Oferta!</h3>
-					<p>
-						Thumbnail caption...
-					</p>
-				</div>
-			</li>
-			<li class="span4">
-				<div class="thumbnail">
-					<img src="http://lorempixel.com/360/200/city" alt="">
-					<h3>¡Oferta!</h3>
-					<p>
-						Thumbnail caption...
-					</p>
-				</div>
-			</li>
-		</ul>
+		<!-- Ofertas	 -->
+		<?php echo $this -> element('ofertas', array("cantidad" => 5)); ?>
 	</div>
 	<aside class="span4">
+		<!-- Contacto	 -->
 		<ul class="thumbnails">
 			<li class="span4">
 				<div class="thumbnail">
@@ -71,6 +54,7 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 				</div>
 			</li>
 		</ul>
+		<!-- Noticias	 -->
 		<?php echo $this -> element('noticias', array("cantidad" => 5)); ?>
 	</aside>
 </div>
