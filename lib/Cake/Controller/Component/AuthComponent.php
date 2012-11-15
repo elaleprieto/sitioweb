@@ -295,9 +295,27 @@ class AuthComponent extends Component {
 			in_array($action, array_map('strtolower', $allowedActions))
 		);
 
+
 		if ($loginAction != $url && $isAllowed) {
 			return true;
 		}
+		
+		// debug(Debugger::trace());
+		// debug("LoginAction: $loginAction");
+		// debug("url: $url");
+		// debug("isAllowed: $isAllowed");
+		// debug("redirect: ".$this->Session->check('Auth.redirect'));
+		// debug("loginRedirect: ".$this->loginRedirect);
+		// debug("env: ".env('HTTP_REFERER'));
+		// debug("write: ".$controller->referer(null, true));
+		// if ($loginAction == $url) {
+			// debug("if: TRUE");
+			// debug($request->data);
+		// } else {
+			// debug("if: FALSE");
+			// debug($request->data);
+		// }
+		// return false;
 
 		if ($loginAction == $url) {
 			if (empty($request->data)) {

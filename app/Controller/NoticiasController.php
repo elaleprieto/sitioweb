@@ -7,6 +7,11 @@ App::uses('AppController', 'Controller');
  */
 class NoticiasController extends AppController {
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this -> Auth -> allow('mostrar');
+	}
+
 	/**
 	 * index method
 	 *
