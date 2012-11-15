@@ -73,8 +73,8 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 							<li <?=($this -> request -> controller == 'pages' && $this -> request -> action == 'display' && $this -> request -> pass[0] == 'inicio') ? 'class="active"' : 'class=""' ?>>
 								<?=$this -> Html -> link('Inicio', '/') ?>
 							</li>
-							<li>
-								<?=$this -> Html -> link('Historia', '/historia') ?>
+							<li <?=($this -> request -> controller == 'pages' && $this -> request -> action == 'display' && $this -> request -> pass[0] == 'empresa') ? 'class="active"' : 'class=""' ?>>
+								<?=$this -> Html -> link('Empresa', '/empresa') ?>
 							</li>
 							<li>
 								<?=$this -> Html -> link('Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1') ?>
@@ -160,7 +160,60 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 
 			<?php echo $this -> Session -> flash(); ?>
 
-			<?php echo $this -> fetch('content'); ?>
+			<div class="row">
+				<div class="span8">
+					<?php echo $this -> fetch('content'); ?>
+				</div>
+				<aside class="span4">
+					<!-- Contacto	 -->
+					<ul class="thumbnails">
+						<li class="span4">
+							<div class="thumbnail">
+								<dl>
+									<dt>
+										<h3 class="muted">Contáctenos</h3>
+									</dt>
+									<dd title="Teléfono">
+										<i class="icon-headphones"></i> (+54) (0342) 452-4057
+									</dd>
+									<dd title="Fax">
+										<i class="icon-print"></i> (+54) (0342) 453-3994
+									</dd>
+									<br />
+									<dd>
+										<a href="mailto:contacto@elefe.com.ar?subject=Asunto"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
+									</dd>
+									<br />
+									<dd>
+										<i class="icon-map-marker"></i> San Lorenzo 2357
+									</dd>
+									<dd>
+										<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
+									</dd>
+									<dd>
+										<i class="icon-map-marker"></i> Argentina
+									</dd>
+								</dl>
+							</div>
+						</li>
+					</ul>
+					<!-- Catálogo	 -->
+					<ul class="thumbnails">
+						<li class="span4">
+							<div class="thumbnail">
+								<p id="catalogo-link"><?=$this -> Html -> link('<i class="icon-download-alt icon-white"></i> Descargar Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1', array(
+									'escape' => false,
+									'class' => 'btn btn-warning btn-large',
+									'id' => 'catalogo-boton'
+								));
+ ?></p>
+							</div>
+						</li>
+					</ul>
+					<!-- Noticias	 -->
+					<?php echo $this -> element('noticias', array("cantidad" => 5)); ?>
+				</aside>
+			</div>
 			<!-- 			</div> -->
 			<hr />
 			<footer>
@@ -183,7 +236,7 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 							El contenido de esta web est&aacute; sujeto a una licencia de Creative Commons si no se indica lo contrario.
 							<a href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a> es realizado por <a cc="http://creativecommons.org/ns#" href="http://colectivolibre.com.ar" property="attributionName" rel="attributionURL">Colectivo Libre</a> y se encuentra bajo una Licencia <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Atribuci&oacute;n 3.0 Unported</a>.
 							Basada en la obra <a dct="http://purl.org/dc/terms/" href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a>.
-							Permisos que vayan m&aacute;s all&aacute; de lo cubierto por esta licencia pueden encontrarse en <a cc="http://creativecommons.org/ns#" href="http://elefe.com.ar" rel="morePermissions">http://elefe.com.ar/licencia</a>
+							Permisos que vayan m&aacute;s all&aacute; de lo cubierto por esta licencia pueden encontrarse en <a cc="http://creativecommons.org/ns#" href="http://elefe.com.ar" rel="morePermissions">http://elefe.com.ar/licencia</a>. Las fotos y los precios de las ofertas, son ilustrativos y orientativos. No se aceptarán devoluciones por la mercadería en oferta. La finalización de las ofertas está sujeta sólo a la decisión de la empresa, por más que la publicación no se haya retirado de este sitio.
 						</p>
 					</div>
 				</div>
@@ -212,8 +265,7 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
  ?>
 		<?php echo $this -> fetch('script'); ?>
 		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-			( function(d, t) {
+			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
 					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
 					s.parentNode.insertBefore(g, s)

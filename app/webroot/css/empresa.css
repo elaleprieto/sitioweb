@@ -1,0 +1,28 @@
+/* line 6, ../sass/empresa.scss */
+#historia {
+  background: rgba(255, 191, 0, 0.2);
+  height: 200px;
+}
+
+/* line 11, ../sass/empresa.scss */
+#mision {
+  background: rgba(205, 255, 233, 0.2);
+  height: 200px;
+}
+
+/* line 16, ../sass/empresa.scss */
+#vision {
+  background: rgba(206, 255, 69, 0.5);
+  height: 200px;
+}
+
+/* line 21, ../sass/empresa.scss */
+#valores {
+  background: rgba(249, 255, 154, 0.8);
+  height: 200px;
+}
+
+/* line 26, ../sass/empresa.scss */
+#valores-lista > li {
+  padding: 0 15px;
+}

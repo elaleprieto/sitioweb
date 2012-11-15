@@ -10,10 +10,10 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 					<h1><?=$this -> Html -> image('logo.svg', array('class' => 'brand')); ?>
 					ELEFE <small>Artículos para Ferreterías</small></h1>
 					<p>
-						ELEFE nace en 1983 de la mano de un compromiso: Proveer Productos de Calidad a sus Clientes, sentando las bases de la empresa actual y liderando el sector Ferretería y Herrajes en la región Litoral.
+						ELEFE nace de la mano de un compromiso: Proveer a sus Clientes Productos de Calidad al mejor Precio, sentando las bases de la empresa actual y liderando el sector Ferretería y Herrajes en la región Litoral.
 					</p>
 					<p>
-						<a href="historia" class="btn btn-primary"> Seguir leyendo <i class="icon-chevron-right icon-white"></i></a>
+						<a href="empresa" class="btn btn-primary"> Seguir leyendo <i class="icon-chevron-right icon-white"></i></a>
 					</p>
 				</div>
 			</div>
@@ -21,40 +21,4 @@ echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 		<!-- Ofertas	 -->
 		<?php echo $this -> element('ofertas', array("cantidad" => 5)); ?>
 	</div>
-	<aside class="span4">
-		<!-- Contacto	 -->
-		<ul class="thumbnails">
-			<li class="span4">
-				<div class="thumbnail">
-					<dl>
-						<dt>
-							<h3 class="muted">Contáctenos</h3>
-						</dt>
-						<dd title="Teléfono">
-							<i class="icon-headphones"></i> (+54) (0342) 452-4057
-						</dd>
-						<dd title="Fax">
-							<i class="icon-print"></i> (+54) (0342) 453-3994
-						</dd>
-						<br />
-						<dd>
-							<a href="mailto:contacto@elefe.com.ar?subject=Asunto"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
-						</dd>
-						<br />
-						<dd>
-							<i class="icon-map-marker"></i> San Lorenzo 2357
-						</dd>
-						<dd>
-							<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
-						</dd>
-						<dd>
-							<i class="icon-map-marker"></i> Argentina
-						</dd>
-					</dl>
-				</div>
-			</li>
-		</ul>
-		<!-- Noticias	 -->
-		<?php echo $this -> element('noticias', array("cantidad" => 5)); ?>
-	</aside>
 </div>

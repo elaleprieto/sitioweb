@@ -1,0 +1,28 @@
+@import "compass";
+@import "comun";
+
+$altura: 200px;
+
+#historia {
+  @include background(rgba(255, 191, 0, 0.2));
+  height: $altura;
+}
+
+#mision {
+  @include background(rgba(205, 255, 233, 0.2));
+  height: $altura;
+}
+
+#vision {
+  @include background(rgba(206, 255, 69, 0.5));
+  height: $altura;
+}
+
+#valores {
+  @include background(rgba(249, 255, 154, 0.8));
+    height: $altura;
+}
+
+#valores-lista > li {
+  padding: $padding-comun;
+}

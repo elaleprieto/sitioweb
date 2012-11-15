@@ -1,23 +1,60 @@
-/* line 1, ../sass/default.scss */
+/* line 4, ../sass/default.scss */
+.thumbnail h3 {
+  border-bottom: 0.01em dotted #EEEEEE;
+  padding-left: 1%;
+}
+/* line 8, ../sass/default.scss */
+.thumbnail dd {
+  padding-left: 3%;
+}
+
+/* line 13, ../sass/default.scss */
+h4.precio {
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* line 18, ../sass/default.scss */
 img.brand {
   height: 1em;
 }
 
-/* line 4, ../sass/default.scss */
+/* line 22, ../sass/default.scss */
 footer {
   background-color: #F5F5F5;
 }
-/* line 7, ../sass/default.scss */
+/* line 25, ../sass/default.scss */
 footer dl {
   padding: 0 10px;
 }
 
-/* line 11, ../sass/default.scss */
+/* line 30, ../sass/default.scss */
+p {
+  padding: 0 15px;
+  text-align: justify;
+}
+/* line 34, ../sass/default.scss */
+#licencia > p {
+  text-align: center;
+}
+
+/* line 39, ../sass/default.scss */
+#catalogo-link {
+  margin: 14px;
+  padding: 0;
+}
+
+/* line 44, ../sass/default.scss */
+#catalogo-boton {
+  width: 91%;
+}
+
+/* line 48, ../sass/default.scss */
 #licencia {
   text-align: center;
 }
 
-/* line 14, ../sass/default.scss */
+/* line 52, ../sass/default.scss */
 #copyleft {
   height: 1em;
 }
