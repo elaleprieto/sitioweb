@@ -41,15 +41,17 @@ class AppController extends Controller {
 				'action' => 'index'
 			),
 			'logoutRedirect' => array(
-				'controller' => 'users',
-				'action' => 'login'
+				'controller' => 'pages',
+				'action' => 'display', 'inicio'
 			),
 			'authorize' => array('Controller'),
 		)
 	);
 
 	public function beforeFilter() {
-		$this -> Auth -> allow('display');
+		if (AuthComponent::user('role') === 'admin') {
+            $this -> layout = 'admin';
+        }
 	}
 
 	public function isAuthorized($user) {

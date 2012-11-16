@@ -1,0 +1,13 @@
+/* line 1, ../sass/ofertas_carrusel.scss */
+img.ofertaItem {
+  width: 771px;
+  height: auto;
+}
+
+/* line 5, ../sass/ofertas_carrusel.scss */
+img.ofertaItem {
+  width: auto;
+  height: 400px;
+  margin: auto;
+  margin-right: 0px;
+}

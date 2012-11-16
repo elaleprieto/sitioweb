@@ -41,18 +41,19 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 			}
 		</style>
 		<?php
-		echo $this -> Html -> meta('icon');
-		echo $this -> fetch('meta');
-		# Estilos
-		echo $this -> Html -> css(array(
-			'bootstrap',
-			'bootstrap-responsive',
-			'main',
-			'default'
-		));
-		echo $this -> fetch('css');
-		# Modernizr
-		echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
+        echo $this -> Html -> meta('icon');
+        echo $this -> fetch('meta');
+        # Estilos
+        echo $this -> Html -> css(array(
+            'bootstrap',
+            'bootstrap-responsive',
+            'main',
+            'default',
+            'admin'
+        ));
+        echo $this -> fetch('css');
+        # Modernizr
+        echo $this -> Html -> script('vendor/modernizr-2.6.1-respond-1.1.0.min');
 		?>
 	</head>
 	<body>
@@ -82,22 +83,30 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 							<li>
 								<?=$this -> Html -> link('Contacto', '/contacto') ?>
 							</li>
-							<!-- 			Menú Más				 -->
-							<!-- <li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Más <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-							<li>
-							<?=$this -> Html -> link('Crear Usuario', '#') ?>
-							</li>
-							<li>
-							<?=$this -> Html -> link('Solicitar Contraseña', '#') ?>
-							</li>
-							<li>
-							<?=$this -> Html -> link('Noticias', '#') ?>
-							</li>
-							<li>
-							<?=$this -> Html -> link('Eventos', '#') ?>
-							</li>
+							<!-- 			Menú Noticias				 -->
+							<li class="dropdown">
+    							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Noticias <b class="caret"></b></a>
+    							<ul class="dropdown-menu">
+        							<li>
+        						          <?=$this -> Html -> link('Crear Noticia', array('controller' => 'noticias', 'action' => 'add')) ?>
+        							</li>
+        							<li>
+        							     <?=$this -> Html -> link('Listar Noticias', array('controller' => 'noticias', 'action' => 'index')) ?>
+        							</li>
+        						</ul>
+        		             </li>
+							<!-- 			Menú Ofertas				 -->
+							<li class="dropdown">
+    							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ofertas <b class="caret"></b></a>
+    							<ul class="dropdown-menu">
+        							<li>
+        						          <?=$this -> Html -> link('Crear Oferta', array('controller' => 'ofertas', 'action' => 'add')) ?>
+        							</li>
+        							<li>
+        							     <?=$this -> Html -> link('Listar Ofertas', array('controller' => 'ofertas', 'action' => 'index')) ?>
+        							</li>
+        						</ul>
+        		             </li>
 							<!--
 							<li class="dropdown-submenu">
 							<?=$this -> Html -> link('Energia', array('controller' => 'secciones', 'action' => 'view', 3)) ?>
@@ -148,6 +157,19 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 						</button>
 						</form> -->
 
+						<div class="pull-right">
+						    <p class="navbar-text">Bienvenido, <?= ucfirst(AuthComponent::user('username')) ?>
+						    <?= $this -> Html -> link('Salir', array(
+                                    'controller' => 'Users',
+                                    'action' => 'logout'
+                                ), array(
+                                    'id' => 'botonLogout',
+                                    'class' => 'btn btn-inverse btn-small'
+                                ));
+ ?>
+<!-- 						    <a href="lo" id="botonLogout" class="btn btn-inverse btn-small" type="button">Salir</button> -->
+						    </p>
+						</div>
 					</div><!--/.nav-collapse -->
 				</div>
 			</div>
@@ -202,10 +224,10 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 						<li class="span4">
 							<div class="thumbnail">
 								<p id="catalogo-link"><?=$this -> Html -> link('<i class="icon-download-alt icon-white"></i> Descargar Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1', array(
-									'escape' => false,
-									'class' => 'btn btn-warning btn-large',
-									'id' => 'catalogo-boton'
-								));
+                                    'escape' => false,
+                                    'class' => 'btn btn-warning btn-large',
+                                    'id' => 'catalogo-boton'
+                                ));
  ?></p>
 							</div>
 						</li>
@@ -221,13 +243,13 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 					<div id="licencia" class="span12">
 						<p>
 							<?php echo $this -> Html -> link($this -> Html -> image('copyleft_30.png', array(
-								'alt' => $appDescription,
-								'border' => '0',
-								'id' => 'copyleft'
-							)), 'http://www.elefe.com.ar/', array(
-								'target' => '_blank',
-								'escape' => false
-							));
+                                'alt' => $appDescription,
+                                'border' => '0',
+                                'id' => 'copyleft'
+                            )), 'http://www.elefe.com.ar/', array(
+                                'target' => '_blank',
+                                'escape' => false
+                            ));
  ?>
 							Copyleft 2012. Sistema desarrollado completamente con Software Libre y respetando los estándares internacionales.
 						</p>
@@ -258,14 +280,15 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 			window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')
 		</script>
 		<?php echo $this -> Html -> script(array(
-				'vendor/bootstrap.min',
-				'plugins',
-				'main'
-			));
+                'vendor/bootstrap.min',
+                'plugins',
+                'main'
+            ));
  ?>
 		<?php echo $this -> fetch('script'); ?>
 		<script>
-			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; ( function(d, t) {
+			var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+			( function(d, t) {
 					var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
 					g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
 					s.parentNode.insertBefore(g, s)
