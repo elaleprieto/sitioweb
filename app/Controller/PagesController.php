@@ -57,6 +57,9 @@ class PagesController extends AppController {
  * @return void
  */
 	public function display() {
+	    $this->response->sharable(true, 3600);
+        $this->response->expires('+5 days');
+        $this->response->cache('-1 minute', '+5 days');
 		$path = func_get_args();
 
 		$count = count($path);

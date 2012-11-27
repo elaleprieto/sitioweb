@@ -1,3 +1,22 @@
-.correo {
-  max-height: 60px;
+@import "compass/css3";
+
+#div-correo {
+  overflow:hidden;
+}
+
+.imagen-correo {
+  height: 60px;
+  width: 60px;
+}
+#imagen-correo {
+  @include transition-property(all);
+  @include transition-duration(3s);
+  @include transition-timing-function(ease-out);
+}
+
+.imagen-correo-enviado {
+  // width: 1px;
+  text-align:right;
+  opacity: 0.1;
+  margin-right: -60px;
 }

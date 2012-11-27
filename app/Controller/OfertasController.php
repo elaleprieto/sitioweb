@@ -117,7 +117,12 @@ class OfertasController extends AppController {
 			'order' => 'created DESC',
 			'fields' => array(
 				'title',
+				'resumen',
 				'descripcion',
+				'colores',
+				'medidas',
+				'materiales',
+				'otros',
 				'precio',
 				'foto'
 			)

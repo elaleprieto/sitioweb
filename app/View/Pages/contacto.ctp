@@ -1,49 +1,57 @@
 <?php
-echo $this -> Html -> css('contacto', NULL, array('inline' => FALSE));
+# Librerías JavaScript
+echo $this -> Html -> script('contacto', array('inline' => FALSE, 'cache' => TRUE));
+# Se define la ruta base
+echo $this -> Html -> scriptBlock('WEBROOT="' . $this -> Html -> url('/', true) . '"', $options = array('inline' => true));
+# Librerías CSS
+echo $this -> Html -> css('contacto', NULL, array('inline' => FALSE, 'cache' => TRUE));
 ?>
 <div class="row">
 	<div class="span7">
 		<h1><?=$this -> Html -> image('logo.svg', array('class' => 'brand')); ?>
 		ELEFE <small>Artículos para Ferreterías</small></h1>
 	</div>
-	<div class="span1">
-		<?=$this -> Html -> image('email.png', array('class' => 'correo')); ?>
+	<div id="div-correo" class="span1">
+		<?=$this -> Html -> image('email.png', array('class' => 'imagen-correo pull-right', 'id' => 'imagen-correo')); ?>
 	</div>
 </div>
 <hr />
 <div class="row">
 	<div class="span8">
 		<?php
-        echo $this -> Form -> create(array('class' => 'form-horizontal'));
+        echo $this -> Form -> create('Contacto', array('id' => 'formulario', 'class' => 'form-horizontal'));
 
         # Nombre
-        $inputNombre = $this -> Form -> input('Nombre', array(
+        $inputNombre = $this -> Form -> input('nombre', array(
             'label' => FALSE,
+            'id' => 'nombre',
             'div' => 'controls',
             'class' => 'span4'
         ));
         $labelNombre = $this -> Form -> label('Nombre', 'Nombre', array('class' => 'control-label'));
-        echo $this -> Html -> div('control-group', $labelNombre . $inputNombre);
+        echo $this -> Html -> div('control-group', $labelNombre . $inputNombre, array('id' => 'controlGroupNombre'));
 
         # Email
-        $inputEmail = $this -> Form -> input('Correo', array(
+        $inputEmail = $this -> Form -> input('correo', array(
             'label' => FALSE,
+            'id' => 'correo',
             'div' => 'controls',
             'class' => 'span4'
         ));
         $labelEmail = $this -> Form -> label('Correo', 'Correo electrónico', array('class' => 'control-label'));
-        echo $this -> Html -> div('control-group', $labelEmail . $inputEmail);
+        echo $this -> Html -> div('control-group', $labelEmail . $inputEmail, array('id' => 'controlGroupCorreo'));
 
         # Mensaje
-        $inputMensaje = $this -> Form -> input('Consulta', array(
+        $inputMensaje = $this -> Form -> input('consulta', array(
             'label' => FALSE,
+            'id' => 'consulta',
             'div' => 'controls',
             'class' => 'span4',
             'type' => 'textarea',
             'rows' => '5'
         ));
         $labelMensaje = $this -> Form -> label('Consulta', 'Consulta', array('class' => 'control-label'));
-        echo $this -> Html -> div('control-group', $labelMensaje . $inputMensaje);
+        echo $this -> Html -> div('control-group', $labelMensaje . $inputMensaje, array('id' => 'controlGroupConsulta'));
 
         # Botones
         $botonEnviar = $this -> Form -> button('Enviar Consulta', array(

@@ -45,9 +45,8 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
         echo $this -> fetch('meta');
         # Estilos
         echo $this -> Html -> css(array(
-            'bootstrap',
-            'bootstrap-responsive',
-            'main',
+            'bootstrap.min',
+            'bootstrap-responsive.min',
             'default',
             'admin'
         ));
@@ -183,58 +182,9 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 			<?php echo $this -> Session -> flash(); ?>
 
 			<div class="row">
-				<div class="span8">
+				<div class="span12">
 					<?php echo $this -> fetch('content'); ?>
 				</div>
-				<aside class="span4">
-					<!-- Contacto	 -->
-					<ul class="thumbnails">
-						<li class="span4">
-							<div class="thumbnail">
-								<dl>
-									<dt>
-										<h3 class="muted">Contáctenos</h3>
-									</dt>
-									<dd title="Teléfono">
-										<i class="icon-headphones"></i> (+54) (0342) 452-4057
-									</dd>
-									<dd title="Fax">
-										<i class="icon-print"></i> (+54) (0342) 453-3994
-									</dd>
-									<br />
-									<dd>
-										<a href="mailto:contacto@elefe.com.ar?subject=Asunto"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
-									</dd>
-									<br />
-									<dd>
-										<i class="icon-map-marker"></i> San Lorenzo 2357
-									</dd>
-									<dd>
-										<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
-									</dd>
-									<dd>
-										<i class="icon-map-marker"></i> Argentina
-									</dd>
-								</dl>
-							</div>
-						</li>
-					</ul>
-					<!-- Catálogo	 -->
-					<ul class="thumbnails">
-						<li class="span4">
-							<div class="thumbnail">
-								<p id="catalogo-link"><?=$this -> Html -> link('<i class="icon-download-alt icon-white"></i> Descargar Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1', array(
-                                    'escape' => false,
-                                    'class' => 'btn btn-warning btn-large',
-                                    'id' => 'catalogo-boton'
-                                ));
- ?></p>
-							</div>
-						</li>
-					</ul>
-					<!-- Noticias	 -->
-					<?php echo $this -> element('noticias', array("cantidad" => 5)); ?>
-				</aside>
 			</div>
 			<!-- 			</div> -->
 			<hr />
@@ -282,7 +232,6 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		<?php echo $this -> Html -> script(array(
                 'vendor/bootstrap.min',
                 'plugins',
-                'main'
             ));
  ?>
 		<?php echo $this -> fetch('script'); ?>

@@ -1,4 +1,33 @@
-/* line 1, ../sass/contacto.scss */
-.correo {
-  max-height: 60px;
+/* line 3, ../sass/contacto.scss */
+#div-correo {
+  overflow: hidden;
+}
+
+/* line 7, ../sass/contacto.scss */
+.imagen-correo {
+  height: 60px;
+  width: 60px;
+}
+
+/* line 11, ../sass/contacto.scss */
+#imagen-correo {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 3s;
+  -moz-transition-duration: 3s;
+  -o-transition-duration: 3s;
+  transition-duration: 3s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+/* line 17, ../sass/contacto.scss */
+.imagen-correo-enviado {
+  text-align: right;
+  opacity: 0.1;
+  margin-right: -60px;
 }

@@ -45,9 +45,8 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		echo $this -> fetch('meta');
 		# Estilos
 		echo $this -> Html -> css(array(
-			'bootstrap',
-			'bootstrap-responsive',
-			'main',
+			'bootstrap.min',
+			'bootstrap-responsive.min',
 			'default'
 		));
 		echo $this -> fetch('css');
@@ -260,7 +259,6 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		<?php echo $this -> Html -> script(array(
 				'vendor/bootstrap.min',
 				'plugins',
-				'main'
 			));
  ?>
 		<?php echo $this -> fetch('script'); ?>

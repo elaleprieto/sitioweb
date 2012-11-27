@@ -1,10 +1,17 @@
 <div class="ofertas index">
 	<h2><?php echo __('Ofertas'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table cellpadding="0" cellspacing="0" class="table">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('title'); ?></th>
+			<th><?php echo $this->Paginator->sort('resumen'); ?></th>
 			<th><?php echo $this->Paginator->sort('descripcion'); ?></th>
+			<th><?php echo $this->Paginator->sort('unidad'); ?></th>
+			<th><?php echo $this->Paginator->sort('pack'); ?></th>
+			<th><?php echo $this->Paginator->sort('colores'); ?></th>
+			<th><?php echo $this->Paginator->sort('medidas'); ?></th>
+			<th><?php echo $this->Paginator->sort('materiales'); ?></th>
+			<th><?php echo $this->Paginator->sort('otros'); ?></th>
 			<th><?php echo $this->Paginator->sort('precio'); ?></th>
 			<th><?php echo $this->Paginator->sort('foto'); ?></th>
 			<th><?php echo $this->Paginator->sort('vigente'); ?></th>
@@ -17,7 +24,14 @@
 	<tr>
 		<td><?php echo h($oferta['Oferta']['id']); ?>&nbsp;</td>
 		<td><?php echo h($oferta['Oferta']['title']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['resumen']); ?>&nbsp;</td>
 		<td><?php echo h($oferta['Oferta']['descripcion']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['unidad']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['pack']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['colores']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['medidas']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['materiales']); ?>&nbsp;</td>
+		<td><?php echo h($oferta['Oferta']['otros']); ?>&nbsp;</td>
 		<td><?php echo h($oferta['Oferta']['precio']); ?>&nbsp;</td>
 		<td><?php echo h($oferta['Oferta']['foto']); ?>&nbsp;</td>
 		<td><?php echo h($oferta['Oferta']['vigente']); ?>&nbsp;</td>

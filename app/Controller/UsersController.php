@@ -7,232 +7,259 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
-	public function beforeFilter() {
-		parent::beforeFilter();
-		// $this -> Auth -> allow('add', 'logout');
-	}
+    public function beforeFilter() {
+        parent::beforeFilter();
+        // $this -> Auth -> allow('add', 'logout');
+        $this -> Auth -> allow('contactar');
+    }
 
-	public function login() {
-		// $this -> layout = 'ajax';
-		
-		if ($this -> request -> is('post')) {
-			if ($this -> Auth -> login()) {
-				$this -> redirect($this -> Auth -> redirect());
-			}
-			else {
-				$this -> Session -> setFlash(__('Invalid username or password, try again'));
-			}
-		}
-	}
+    public function login() {
+        // $this -> layout = 'ajax';
 
-	public function logout() {
-		$this -> redirect($this -> Auth -> logout());
-	}
+        if ($this -> request -> is('post')) {
+            if ($this -> Auth -> login()) {
+                $this -> redirect($this -> Auth -> redirect());
+            } else {
+                $this -> Session -> setFlash(__('Invalid username or password, try again'));
+            }
+        }
+    }
 
-	public function isAuthorized($user) {
-		// All registered users can add posts
-		if ($this -> action === 'add') {
-			return true;
-		}
+    public function logout() {
+        $this -> redirect($this -> Auth -> logout());
+    }
 
-		// The owner of a post can edit and delete it
-		if (in_array($this -> action, array(
-			'edit',
-			'delete'
-		))) {
-			$postId = $this -> request -> params['pass'][0];
-			if ($this -> Post -> isOwnedBy($postId, $user['id'])) {
-				return true;
-			}
-		}
+    public function isAuthorized($user) {
+        // All registered users can add posts
+        if ($this -> action === 'add') {
+            return true;
+        }
 
-		return parent::isAuthorized($user);
-	}
+        // The owner of a post can edit and delete it
+        if (in_array($this -> action, array(
+            'edit',
+            'delete'
+        ))) {
+            $postId = $this -> request -> params['pass'][0];
+            if ($this -> Post -> isOwnedBy($postId, $user['id'])) {
+                return true;
+            }
+        }
 
-	/**
-	 * index method
-	 *
-	 * @return void
-	 */
-	public function index() {
-		$this -> User -> recursive = 0;
-		$this -> set('users', $this -> paginate());
-	}
+        return parent::isAuthorized($user);
+    }
 
-	/**
-	 * view method
-	 *
-	 * @throws NotFoundException
-	 * @param string $id
-	 * @return void
-	 */
-	public function view($id = null) {
-		$this -> User -> id = $id;
-		if (!$this -> User -> exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		$this -> set('user', $this -> User -> read(null, $id));
-	}
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this -> User -> recursive = 0;
+        $this -> set('users', $this -> paginate());
+    }
 
-	/**
-	 * add method
-	 *
-	 * @return void
-	 */
-	public function add() {
-		if ($this -> request -> is('post')) {
-			$this -> User -> create();
-			if ($this -> User -> save($this -> request -> data)) {
-				$this -> Session -> setFlash(__('The user has been saved'));
-				$this -> redirect(array('action' => 'index'));
-			}
-			else {
-				$this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
-			}
-		}
-	}
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        $this -> User -> id = $id;
+        if (!$this -> User -> exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        $this -> set('user', $this -> User -> read(null, $id));
+    }
 
-	/**
-	 * edit method
-	 *
-	 * @throws NotFoundException
-	 * @param string $id
-	 * @return void
-	 */
-	public function edit($id = null) {
-		$this -> User -> id = $id;
-		if (!$this -> User -> exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this -> request -> is('post') || $this -> request -> is('put')) {
-			if ($this -> User -> save($this -> request -> data)) {
-				$this -> Session -> setFlash(__('The user has been saved'));
-				$this -> redirect(array('action' => 'index'));
-			}
-			else {
-				$this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
-			}
-		}
-		else {
-			$this -> request -> data = $this -> User -> read(null, $id);
-		}
-	}
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        if ($this -> request -> is('post')) {
+            $this -> User -> create();
+            if ($this -> User -> save($this -> request -> data)) {
+                $this -> Session -> setFlash(__('The user has been saved'));
+                $this -> redirect(array('action' => 'index'));
+            } else {
+                $this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
+            }
+        }
+    }
 
-	/**
-	 * delete method
-	 *
-	 * @throws MethodNotAllowedException
-	 * @throws NotFoundException
-	 * @param string $id
-	 * @return void
-	 */
-	public function delete($id = null) {
-		if (!$this -> request -> is('post')) {
-			throw new MethodNotAllowedException();
-		}
-		$this -> User -> id = $id;
-		if (!$this -> User -> exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this -> User -> delete()) {
-			$this -> Session -> setFlash(__('User deleted'));
-			$this -> redirect(array('action' => 'index'));
-		}
-		$this -> Session -> setFlash(__('User was not deleted'));
-		$this -> redirect(array('action' => 'index'));
-	}
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        $this -> User -> id = $id;
+        if (!$this -> User -> exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this -> request -> is('post') || $this -> request -> is('put')) {
+            if ($this -> User -> save($this -> request -> data)) {
+                $this -> Session -> setFlash(__('The user has been saved'));
+                $this -> redirect(array('action' => 'index'));
+            } else {
+                $this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
+            }
+        } else {
+            $this -> request -> data = $this -> User -> read(null, $id);
+        }
+    }
 
-	/**
-	 * admin_index method
-	 *
-	 * @return void
-	 */
-	public function admin_index() {
-		$this -> User -> recursive = 0;
-		$this -> set('users', $this -> paginate());
-	}
+    /**
+     * delete method
+     *
+     * @throws MethodNotAllowedException
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        if (!$this -> request -> is('post')) {
+            throw new MethodNotAllowedException();
+        }
+        $this -> User -> id = $id;
+        if (!$this -> User -> exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this -> User -> delete()) {
+            $this -> Session -> setFlash(__('User deleted'));
+            $this -> redirect(array('action' => 'index'));
+        }
+        $this -> Session -> setFlash(__('User was not deleted'));
+        $this -> redirect(array('action' => 'index'));
+    }
 
-	/**
-	 * admin_view method
-	 *
-	 * @throws NotFoundException
-	 * @param string $id
-	 * @return void
-	 */
-	public function admin_view($id = null) {
-		$this -> User -> id = $id;
-		if (!$this -> User -> exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		$this -> set('user', $this -> User -> read(null, $id));
-	}
+    /**
+     * admin_index method
+     *
+     * @return void
+     */
+    public function admin_index() {
+        $this -> User -> recursive = 0;
+        $this -> set('users', $this -> paginate());
+    }
 
-	/**
-	 * admin_add method
-	 *
-	 * @return void
-	 */
-	public function admin_add() {
-		if ($this -> request -> is('post')) {
-			$this -> User -> create();
-			if ($this -> User -> save($this -> request -> data)) {
-				$this -> Session -> setFlash(__('The user has been saved'));
-				$this -> redirect(array('action' => 'index'));
-			}
-			else {
-				$this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
-			}
-		}
-	}
+    /**
+     * admin_view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_view($id = null) {
+        $this -> User -> id = $id;
+        if (!$this -> User -> exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        $this -> set('user', $this -> User -> read(null, $id));
+    }
 
-	/**
-	 * admin_edit method
-	 *
-	 * @throws NotFoundException
-	 * @param string $id
-	 * @return void
-	 */
-	public function admin_edit($id = null) {
-		$this -> User -> id = $id;
-		if (!$this -> User -> exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this -> request -> is('post') || $this -> request -> is('put')) {
-			if ($this -> User -> save($this -> request -> data)) {
-				$this -> Session -> setFlash(__('The user has been saved'));
-				$this -> redirect(array('action' => 'index'));
-			}
-			else {
-				$this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
-			}
-		}
-		else {
-			$this -> request -> data = $this -> User -> read(null, $id);
-		}
-	}
+    /**
+     * admin_add method
+     *
+     * @return void
+     */
+    public function admin_add() {
+        if ($this -> request -> is('post')) {
+            $this -> User -> create();
+            if ($this -> User -> save($this -> request -> data)) {
+                $this -> Session -> setFlash(__('The user has been saved'));
+                $this -> redirect(array('action' => 'index'));
+            } else {
+                $this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
+            }
+        }
+    }
 
-	/**
-	 * admin_delete method
-	 *
-	 * @throws MethodNotAllowedException
-	 * @throws NotFoundException
-	 * @param string $id
-	 * @return void
-	 */
-	public function admin_delete($id = null) {
-		if (!$this -> request -> is('post')) {
-			throw new MethodNotAllowedException();
-		}
-		$this -> User -> id = $id;
-		if (!$this -> User -> exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this -> User -> delete()) {
-			$this -> Session -> setFlash(__('User deleted'));
-			$this -> redirect(array('action' => 'index'));
-		}
-		$this -> Session -> setFlash(__('User was not deleted'));
-		$this -> redirect(array('action' => 'index'));
-	}
+    /**
+     * admin_edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_edit($id = null) {
+        $this -> User -> id = $id;
+        if (!$this -> User -> exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this -> request -> is('post') || $this -> request -> is('put')) {
+            if ($this -> User -> save($this -> request -> data)) {
+                $this -> Session -> setFlash(__('The user has been saved'));
+                $this -> redirect(array('action' => 'index'));
+            } else {
+                $this -> Session -> setFlash(__('The user could not be saved. Please, try again.'));
+            }
+        } else {
+            $this -> request -> data = $this -> User -> read(null, $id);
+        }
+    }
+
+    /**
+     * admin_delete method
+     *
+     * @throws MethodNotAllowedException
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_delete($id = null) {
+        if (!$this -> request -> is('post')) {
+            throw new MethodNotAllowedException();
+        }
+        $this -> User -> id = $id;
+        if (!$this -> User -> exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        if ($this -> User -> delete()) {
+            $this -> Session -> setFlash(__('User deleted'));
+            $this -> redirect(array('action' => 'index'));
+        }
+        $this -> Session -> setFlash(__('User was not deleted'));
+        $this -> redirect(array('action' => 'index'));
+    }
+
+    public function contactar() {
+        $this -> autoRender = FALSE;
+        if ($this -> request -> isPost() && isset($this -> request -> data)) {
+            # Validación de Campos
+            $contacto = $this -> request -> data['Contacto'];
+            if(isset($contacto['nombre']) && $contacto['nombre'] !== ''
+                && isset($contacto['correo']) && $contacto['correo'] !== ''
+                && isset($contacto['consulta']) && $contacto['consulta'] !== '') {
+                    
+                    //
+                    // # Se crea un nuevo CakeEmail usando la plantilla gmail.
+                    // $email = new CakeEmail('gmail');
+                    // if (isset($this -> data['Contacto'])) {
+                    // $this -> Contacto -> set($this -> data);
+                    //
+                    # Se crea el mensaje
+                    $mensaje = 'Enviado por: ' . $this -> data['Contacto']['nombre'] . "\n";
+                    $mensaje .= 'Mail de contacto: ' . $this -> data['Contacto']['correo'] . "\n";
+                    $mensaje .= 'Consulta: ' . $this -> data['Contacto']['consulta'];
+                    debug($mensaje);
+                    //
+                    // # Se envía el mensaje
+                    // if ($email -> send($mensaje)) {
+                    // # Mensaje indicando que la consulta se ha enviado con éxito.
+                    // $this -> Session -> setFlash('<div class="alert alert-success"> Su consulta ha sido enviada con éxito.' . '<br>' . '
+                    // Nos comunicaremos con usted a la brevedad. </div>');
+                    // }
+                    // }
+                }
+
+        }
+    }
 
 }
