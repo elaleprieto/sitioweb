@@ -53,7 +53,7 @@ $i = 0;
                             'zero' => 'Consultar'
                         );
                     ?>
-                    <h4 class="precio">Precio Unitario: <?= $this -> Number -> currency($oferta['Oferta']['precio'], 'USD', $condiciones); ?></h4>
+                    <h4 class="precio">Precio Unitario desde: <?= $this -> Number -> currency($oferta['Oferta']['precio'], 'USD', $condiciones); ?></h4>
                     <h4 class="precio">(IVA incl.)</h4>
                 </div>
             </div>

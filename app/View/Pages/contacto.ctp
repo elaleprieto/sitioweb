@@ -64,7 +64,10 @@ echo $this -> Html -> css('contacto', NULL, array('inline' => FALSE, 'cache' => 
             'div' => FALSE,
             'class' => 'btn',
         ));
-        echo $this -> Html -> div('form-actions', $botonEnviar . ' ' . $botonBorrar);
+        $divEnviando = $this->Html->div('div-enviando-hide', '<i id="icon-enviando" class="icon-refresh"></i> Enviando...', array(
+            'id' => 'div-enviando',
+        ));
+        echo $this -> Html -> div('form-actions', $botonEnviar . ' ' . $botonBorrar . ' ' . $divEnviando);
         echo $this -> Form -> end();
 		?>
 	</div>

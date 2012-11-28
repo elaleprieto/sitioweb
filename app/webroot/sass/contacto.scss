@@ -1,8 +1,25 @@
 @import "compass/css3";
+@import "partials/animateAle";
 
 #div-correo {
-  overflow:hidden;
+  overflow: hidden;
 }
+
+.div-enviando-hide {
+  display: none;
+}
+
+.div-enviando-show {
+  display: inline-block;
+  margin-left: 5px;
+  @include animate(bounceInRight);
+
+}
+
+#icon-enviando {
+  @include animate(rotate360, infinite, 2s, linear);
+}
+
 
 .imagen-correo {
   height: 60px;
@@ -20,3 +37,9 @@
   opacity: 0.1;
   margin-right: -60px;
 }
+
+
+
+/**
+ *   Animaciones
+ */

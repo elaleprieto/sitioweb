@@ -241,7 +241,7 @@ class UsersController extends AppController {
                     
                     //
                     // # Se crea un nuevo CakeEmail usando la plantilla gmail.
-                    $email = new CakeEmail('gmail');
+                    $email = new CakeEmail('neolo');
                     // if (isset($this -> data['Contacto'])) {
                     // $this -> Contacto -> set($this -> data);
                     //

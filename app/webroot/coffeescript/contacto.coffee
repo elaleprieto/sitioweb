@@ -4,10 +4,12 @@ jQuery ->
     removerMensajes()
     removerClases()
     if(camposRellenos())
+      $('#div-enviando').addClass('div-enviando-show');
       $.post WEBROOT + "users/contactar", $('#formulario').serialize(), (data) ->
         console.info 'ok'
         $('#imagen-correo').addClass('imagen-correo-enviado')
         setTimeout "$('#imagen-correo').removeClass('imagen-correo-enviado')", 4000
+        $('#div-enviando').removeClass('div-enviando-show');
     else
       console.error 'error'
 

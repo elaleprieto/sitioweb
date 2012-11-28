@@ -7,10 +7,12 @@
       removerMensajes();
       removerClases();
       if (camposRellenos()) {
+        $('#div-enviando').addClass('div-enviando-show');
         return $.post(WEBROOT + "users/contactar", $('#formulario').serialize(), function(data) {
           console.info('ok');
           $('#imagen-correo').addClass('imagen-correo-enviado');
-          return setTimeout("$('#imagen-correo').removeClass('imagen-correo-enviado')", 4000);
+          setTimeout("$('#imagen-correo').removeClass('imagen-correo-enviado')", 4000);
+          return $('#div-enviando').removeClass('div-enviando-show');
         });
       } else {
         return console.error('error');
