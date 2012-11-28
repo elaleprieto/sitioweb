@@ -3,6 +3,7 @@ echo $this -> Html -> css('ofertas_carrusel', NULL, array('inline' => FALSE));
 $cantidad = isset($cantidad) ? $cantidad : 5;
 $ofertas = $this -> requestAction('ofertas/mostrar/' . $cantidad);
 $i = 0;
+// debug($ofertas);
 ?>
 <div id="myCarousel" class="carousel slide">
     <!-- Carousel items -->
@@ -11,17 +12,16 @@ $i = 0;
             <div class="<?= $i==0 ? 'item active' : 'item' ?>">
                 <?= $this -> Html -> image("ofertas/" . $oferta['Oferta']['foto'], array('class' => 'ofertaItem')); ?>
                 <div class="carousel-caption">
-<!--                     <h4>GUARDACABOS</h4> -->
                     <h4><small>¡Oferta!</small> <?= $oferta['Oferta']['title']; ?></h4>
                     <p>
                         <?= $oferta['Oferta']['descripcion']; ?>
                     </p>
-                    <?php if($oferta['Oferta']['unidad'] !== ''): ?>
+                    <?php if($oferta['Oferta']['unidad'] !== ''  && $oferta['Oferta']['unidad'] !== NULL): ?>
                         <p>
                             <b>Unidad:</b> <?=$oferta['Oferta']['unidad']?>
                         </p>
                     <?php endif ?>
-                    <?php if($oferta['Oferta']['pack'] !== ''): ?>
+                    <?php if($oferta['Oferta']['pack'] !== '' && $oferta['Oferta']['pack'] !== NULL): ?>
                         <p>
                             <b>Pack:</b> <?=$oferta['Oferta']['pack']?>
                         </p>

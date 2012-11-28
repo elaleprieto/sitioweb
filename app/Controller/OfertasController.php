@@ -119,6 +119,8 @@ class OfertasController extends AppController {
 				'title',
 				'resumen',
 				'descripcion',
+				'unidad',
+				'pack',
 				'colores',
 				'medidas',
 				'materiales',

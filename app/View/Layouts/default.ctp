@@ -78,7 +78,7 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 							<li>
 								<?=$this -> Html -> link('Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1') ?>
 							</li>
-							<li>
+							<li <?=($this -> request -> controller == 'pages' && $this -> request -> action == 'display' && $this -> request -> pass[0] == 'contacto') ? 'class="active"' : 'class=""' ?>>
 								<?=$this -> Html -> link('Contacto', '/contacto') ?>
 							</li>
 							<!-- 			Menú Más				 -->
