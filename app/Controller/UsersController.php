@@ -230,23 +230,25 @@ class UsersController extends AppController {
         $this -> redirect(array('action' => 'index'));
     }
 
+    /**
+     * contactar method
+     * Se utiliza por el formulario de contacto para enviar el mensaje.
+     * @return void
+     */
     public function contactar() {
         $this -> autoRender = FALSE;
         if ($this -> request -> isPost() && isset($this -> request -> data)) {
             # Validación de Campos
             $contacto = $this -> request -> data['Contacto'];
-            if(isset($contacto['nombre']) && $contacto['nombre'] !== ''
-                && isset($contacto['correo']) && $contacto['correo'] !== ''
-                && isset($contacto['consulta']) && $contacto['consulta'] !== '') {
-                    App::import('Vendor', 'contras', array('file' => 'contras.php'));
-                    # Se crea el mensaje
-                    $mensaje = 'Enviado por: ' . $this -> data['Contacto']['nombre'] . "\n";
-                    $mensaje .= 'Mail de contacto: ' . $this -> data['Contacto']['correo'] . "\n";
-                    $mensaje .= 'Consulta: ' . $this -> data['Contacto']['consulta'];
-                    // # Se envía el mensaje
-                    mail(TO, ASUNTO, $mensaje, 'From: '.FROM);
-                }
-
+            if (isset($contacto['nombre']) && $contacto['nombre'] !== '' && isset($contacto['correo']) && $contacto['correo'] !== '' && isset($contacto['consulta']) && $contacto['consulta'] !== '') {
+                App::import('Vendor', 'contras', array('file' => 'contras.php'));
+                # Se crea el mensaje
+                $mensaje = 'Enviado por: ' . $this -> data['Contacto']['nombre'] . "\n";
+                $mensaje .= 'Mail de contacto: ' . $this -> data['Contacto']['correo'] . "\n";
+                $mensaje .= 'Consulta: ' . $this -> data['Contacto']['consulta'];
+                # Se envía el mensaje
+                mail(TO, ASUNTO, $mensaje, 'From: ' . FROM);
+            }
         }
     }
 
