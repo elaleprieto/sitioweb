@@ -238,26 +238,13 @@ class UsersController extends AppController {
             if(isset($contacto['nombre']) && $contacto['nombre'] !== ''
                 && isset($contacto['correo']) && $contacto['correo'] !== ''
                 && isset($contacto['consulta']) && $contacto['consulta'] !== '') {
-                    
-                    //
-                    // # Se crea un nuevo CakeEmail usando la plantilla gmail.
-                    $email = new CakeEmail('neolo');
-                    // if (isset($this -> data['Contacto'])) {
-                    // $this -> Contacto -> set($this -> data);
-                    //
+                    App::import('Vendor', 'contras', array('file' => 'contras.php'));
                     # Se crea el mensaje
                     $mensaje = 'Enviado por: ' . $this -> data['Contacto']['nombre'] . "\n";
                     $mensaje .= 'Mail de contacto: ' . $this -> data['Contacto']['correo'] . "\n";
                     $mensaje .= 'Consulta: ' . $this -> data['Contacto']['consulta'];
-                    // debug($mensaje);
-                    //
                     // # Se envía el mensaje
-                    if ($email -> send($mensaje)) {
-                    // # Mensaje indicando que la consulta se ha enviado con éxito.
-                    // $this -> Session -> setFlash('<div class="alert alert-success"> Su consulta ha sido enviada con éxito.' . '<br>' . '
-                    // Nos comunicaremos con usted a la brevedad. </div>');
-                    // }
-                    }
+                    mail(TO, ASUNTO, $mensaje, 'From: '.FROM);
                 }
 
         }
