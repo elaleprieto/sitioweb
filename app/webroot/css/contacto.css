@@ -3284,11 +3284,16 @@
 }
 
 /* line 8, ../sass/contacto.scss */
-.div-enviando-hide {
+#mensaje {
   display: none;
 }
 
 /* line 12, ../sass/contacto.scss */
+.div-enviando-hide {
+  display: none;
+}
+
+/* line 16, ../sass/contacto.scss */
 .div-enviando-show {
   display: inline-block;
   margin-left: 5px;
@@ -3299,7 +3304,7 @@
   animation: bounceInRight 1s 0.2s ease both;
 }
 
-/* line 19, ../sass/contacto.scss */
+/* line 23, ../sass/contacto.scss */
 #icon-enviando {
   -webkit-animation: rotate360 infinite 2s linear both;
   -moz-animation: rotate360 infinite 2s linear both;
@@ -3308,13 +3313,13 @@
   animation: rotate360 infinite 2s linear both;
 }
 
-/* line 24, ../sass/contacto.scss */
+/* line 27, ../sass/contacto.scss */
 .imagen-correo {
   height: 60px;
   width: 60px;
 }
 
-/* line 28, ../sass/contacto.scss */
+/* line 31, ../sass/contacto.scss */
 #imagen-correo {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -3330,7 +3335,7 @@
   transition-timing-function: ease-out;
 }
 
-/* line 34, ../sass/contacto.scss */
+/* line 37, ../sass/contacto.scss */
 .imagen-correo-enviado {
   text-align: right;
   opacity: 0.1;

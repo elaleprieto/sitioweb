@@ -15,6 +15,11 @@ echo $this -> Html -> css('contacto', NULL, array('inline' => FALSE, 'cache' => 
 		<?=$this -> Html -> image('email.png', array('class' => 'imagen-correo pull-right', 'id' => 'imagen-correo')); ?>
 	</div>
 </div>
+<div id="mensaje" class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>¡Muchas Gracias!</h4>
+    Hemos recibido tu consulta, en breve te responderemos...
+</div>
 <hr />
 <div class="row">
 	<div class="span8">

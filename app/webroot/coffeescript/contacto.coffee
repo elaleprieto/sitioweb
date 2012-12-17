@@ -9,10 +9,9 @@ jQuery ->
         console.info 'ok'
         $('#imagen-correo').addClass('imagen-correo-enviado')
         setTimeout "$('#imagen-correo').removeClass('imagen-correo-enviado')", 4000
-        $('#div-enviando').removeClass('div-enviando-show');
-    else
-      console.error 'error'
-
+        $('#div-enviando').removeClass('div-enviando-show')
+        $('#mensaje').show()
+        $('#nombre,#correo,#consulta').val('')
 
 camposRellenos = ->
   nombre = $('#nombre').val()

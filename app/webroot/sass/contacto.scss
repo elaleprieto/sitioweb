@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+#mensaje {
+  display: none;
+}
+
 .div-enviando-hide {
   display: none;
 }
@@ -19,7 +23,6 @@
 #icon-enviando {
   @include animate(rotate360, infinite, 2s, linear);
 }
-
 
 .imagen-correo {
   height: 60px;

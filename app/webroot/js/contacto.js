@@ -12,10 +12,10 @@
           console.info('ok');
           $('#imagen-correo').addClass('imagen-correo-enviado');
           setTimeout("$('#imagen-correo').removeClass('imagen-correo-enviado')", 4000);
-          return $('#div-enviando').removeClass('div-enviando-show');
+          $('#div-enviando').removeClass('div-enviando-show');
+          $('#mensaje').show();
+          return $('#nombre,#correo,#consulta').val('');
         });
-      } else {
-        return console.error('error');
       }
     });
   });
