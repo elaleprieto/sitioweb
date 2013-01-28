@@ -1,16 +1,18 @@
 <?php
 echo $this -> Html -> css('inicio', NULL, array('inline' => FALSE));
 ?>
-<div class="row">
-	<div class="span8">
-		<div class="row">
-			<div class="span8">
-        		<?php echo $this -> Html -> image('banner.png'); ?>
-			</div>
-		</div>
-	</div>
-</div>
-<br />
+<!-- 
+    <div class="row">
+    	<div class="span8">
+    		<div class="row">
+    			<div class="span8">
+            		<?php echo $this -> Html -> image('banner.png'); ?>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <br />
+-->
 <div class="row">
 	<div class="span8">
 		<div class="row">
