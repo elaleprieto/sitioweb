@@ -1,28 +1,69 @@
-/* line 6, ../sass/empresa.scss */
+/* line 11, ../sass/empresa.sass */
+.thumbnail {
+  padding: 0;
+}
+
+/* line 14, ../sass/empresa.sass */
+#historia, #mision, #vision, #valores {
+  height: 200px;
+}
+/* line 17, ../sass/empresa.sass */
+#historia h3, #mision h3, #vision h3, #valores h3 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+/* line 22, ../sass/empresa.sass */
 #historia {
-  background: rgba(255, 191, 0, 0.2);
-  height: 200px;
+  -webkit-box-shadow: rgba(255, 191, 0, 0.2) 0px 0px 5px 5px;
+  -moz-box-shadow: rgba(255, 191, 0, 0.2) 0px 0px 5px 5px;
+  box-shadow: rgba(255, 191, 0, 0.2) 0px 0px 5px 5px;
+  border-color: rgba(255, 191, 0, 0.2);
+}
+/* line 26, ../sass/empresa.sass */
+#historia h3 {
+  background-color: rgba(255, 191, 0, 0.2);
 }
 
-/* line 11, ../sass/empresa.scss */
+/* line 29, ../sass/empresa.sass */
 #mision {
-  background: rgba(205, 255, 233, 0.2);
-  height: 200px;
+  -webkit-box-shadow: rgba(205, 255, 233, 0.2) 0px 0px 5px 5px;
+  -moz-box-shadow: rgba(205, 255, 233, 0.2) 0px 0px 5px 5px;
+  box-shadow: rgba(205, 255, 233, 0.2) 0px 0px 5px 5px;
+  border-color: rgba(205, 255, 233, 0.2);
+}
+/* line 33, ../sass/empresa.sass */
+#mision h3 {
+  background-color: rgba(205, 255, 233, 0.2);
 }
 
-/* line 16, ../sass/empresa.scss */
+/* line 36, ../sass/empresa.sass */
 #vision {
-  background: rgba(206, 255, 69, 0.5);
-  height: 200px;
+  -webkit-box-shadow: rgba(206, 255, 69, 0.5) 0px 0px 5px 5px;
+  -moz-box-shadow: rgba(206, 255, 69, 0.5) 0px 0px 5px 5px;
+  box-shadow: rgba(206, 255, 69, 0.5) 0px 0px 5px 5px;
+  border-color: rgba(206, 255, 69, 0.5);
+}
+/* line 40, ../sass/empresa.sass */
+#vision h3 {
+  background-color: rgba(206, 255, 69, 0.5);
 }
 
-/* line 21, ../sass/empresa.scss */
+/* line 43, ../sass/empresa.sass */
 #valores {
-  background: rgba(249, 255, 154, 0.8);
-  height: 200px;
+  -webkit-box-shadow: rgba(249, 255, 154, 0.8) 0px 0px 5px 5px;
+  -moz-box-shadow: rgba(249, 255, 154, 0.8) 0px 0px 5px 5px;
+  box-shadow: rgba(249, 255, 154, 0.8) 0px 0px 5px 5px;
+  border-color: rgba(249, 255, 154, 0.8);
+}
+/* line 47, ../sass/empresa.sass */
+#valores h3 {
+  background-color: rgba(249, 255, 154, 0.8);
 }
 
-/* line 26, ../sass/empresa.scss */
+/* line 50, ../sass/empresa.sass */
 #valores-lista > li {
   padding: 0 15px;
 }

@@ -1,0 +1,51 @@
+@import "compass", "comun"
+
+$altura: 200px
+$hoff_voff: 0px 0px
+$blur_spread: 5px 5px
+$color_historia: rgba(255, 191, 0, 0.2)
+$color_mision: rgba(205, 255, 233, 0.2)
+$color_vision: rgba(206, 255, 69, 0.5)
+$color_valores: rgba(249, 255, 154, 0.8)
+
+.thumbnail
+	padding: 0
+
+#historia, #mision, #vision, #valores
+	height: $altura
+	
+	h3
+		@include opacity(0.6)
+		text-align: center
+		margin: 0 0 10px
+
+#historia
+	@include box-shadow($color_historia $hoff_voff $blur_spread)
+	border-color: $color_historia
+	
+	h3
+		background-color: $color_historia
+
+#mision
+	@include box-shadow($color_mision $hoff_voff $blur_spread)
+	border-color: $color_mision
+	
+	h3
+		background-color: $color_mision
+
+#vision
+	@include box-shadow($color_vision $hoff_voff $blur_spread)
+	border-color: $color_vision
+	
+	h3
+		background-color: $color_vision
+
+#valores
+	@include box-shadow($color_valores $hoff_voff $blur_spread)
+	border-color: $color_valores
+	
+	h3
+		background-color: $color_valores
+
+#valores-lista > li
+	padding: $padding-comun
