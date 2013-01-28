@@ -167,11 +167,9 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 					<!-- Contacto	 -->
 					<ul class="thumbnails">
 						<li class="span4">
-							<div class="thumbnail">
+							<div class="thumbnail lateral">
+								<h3>Contáctenos</h3>
 								<dl>
-									<dt>
-										<h3 class="muted">Contáctenos</h3>
-									</dt>
 									<dd title="Teléfono">
 										<i class="icon-headphones"></i> (+54) (0342) 452-4057
 									</dd>
@@ -199,7 +197,7 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 					<!-- Catálogo	 -->
 					<ul class="thumbnails">
 						<li class="span4">
-							<div class="thumbnail">
+							<div class="thumbnail lateral">
 								<p id="catalogo-link"><?=$this -> Html -> link('<i class="icon-download-alt icon-white"></i> Descargar Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1', array(
 									'escape' => false,
 									'class' => 'btn btn-warning btn-large',

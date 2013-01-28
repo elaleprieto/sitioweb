@@ -1,60 +1,88 @@
-/* line 4, ../sass/default.scss */
-.thumbnail h3 {
-  border-bottom: 0.01em dotted #EEEEEE;
-  padding-left: 1%;
+/* line 8, ../sass/default.sass */
+.thumbnail.lateral {
+  border-color: #f89406;
 }
-/* line 8, ../sass/default.scss */
+/* line 11, ../sass/default.sass */
+.thumbnail.lateral h3 {
+  -webkit-box-shadow: #f89406 0px 0px 5px 5px;
+  -moz-box-shadow: #f89406 0px 0px 5px 5px;
+  box-shadow: #f89406 0px 0px 5px 5px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  border-bottom: none;
+  margin: 0 0 10px;
+  padding-left: 1%;
+  text-align: center;
+  color: white;
+  background-color: #f89406;
+}
+/* line 21, ../sass/default.sass */
 .thumbnail dd {
   padding-left: 3%;
 }
 
-/* line 13, ../sass/default.scss */
+/* line 24, ../sass/default.sass */
 h4.precio {
   padding-right: 10px;
   text-align: right;
 }
 
-/* line 18, ../sass/default.scss */
+/* line 28, ../sass/default.sass */
 img.brand {
   height: 1em;
 }
 
-/* line 22, ../sass/default.scss */
-footer {
-  background-color: #F5F5F5;
+/* line 31, ../sass/default.sass */
+aside {
+  border-left: 1px solid #fdd49a;
+  padding-left: 19px;
 }
-/* line 25, ../sass/default.scss */
+/* line 35, ../sass/default.sass */
+aside.span4 {
+  width: 350px;
+}
+
+/* line 38, ../sass/default.sass */
+footer {
+  background-color: whitesmoke;
+}
+/* line 40, ../sass/default.sass */
 footer dl {
   padding: 0 10px;
 }
 
-/* line 30, ../sass/default.scss */
+/* line 43, ../sass/default.sass */
 p {
   padding: 0 15px;
   text-align: justify;
 }
-/* line 34, ../sass/default.scss */
+/* line 46, ../sass/default.sass */
 #licencia > p {
   text-align: center;
 }
 
-/* line 39, ../sass/default.scss */
+/* line 49, ../sass/default.sass */
 #catalogo-link {
   margin: 14px;
   padding: 0;
 }
 
-/* line 44, ../sass/default.scss */
+/* line 53, ../sass/default.sass */
 #catalogo-boton {
   width: 91%;
 }
 
-/* line 48, ../sass/default.scss */
+/* line 56, ../sass/default.sass */
 #licencia {
   text-align: center;
 }
 
-/* line 52, ../sass/default.scss */
+/* line 59, ../sass/default.sass */
 #copyleft {
   height: 1em;
+}
+
+/* line 62, ../sass/default.sass */
+#divisora {
+  margin-top: 0;
 }

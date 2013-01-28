@@ -4,9 +4,9 @@ echo $this -> Html -> css('empresa', NULL, array('inline' => FALSE));
 <div class="row">
 	<div class="span8">
 		<h1><?=$this -> Html -> image('logo.svg', array('class' => 'brand')); ?> ELEFE <small>Artículos para Ferreterías</small></h1>
-		<hr />
 	</div>
 </div>
+<hr id="divisora" />
 <ul class="thumbnails">
 	<li class="span4">
 		<div id='historia' class="thumbnail">

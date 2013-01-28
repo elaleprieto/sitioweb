@@ -2,7 +2,7 @@
 <?php $noticias = $this -> requestAction('noticias/mostrar/' . $cantidad); ?>
 <ul class="thumbnails">
 	<li class="span4">
-		<div class="thumbnail">
+		<div class="thumbnail lateral">
  			<h3 class="muted">Noticias</h3>
 			<table class="table table-striped">
 				<thead>

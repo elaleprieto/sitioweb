@@ -20,7 +20,7 @@ echo $this -> Html -> css('contacto', NULL, array('inline' => FALSE, 'cache' => 
     <h4>¡Muchas Gracias!</h4>
     Hemos recibido tu consulta, en breve te responderemos...
 </div>
-<hr />
+<hr id="divisora" />
 <div class="row">
 	<div class="span8">
 		<?php

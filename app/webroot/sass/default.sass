@@ -1,0 +1,63 @@
+@import "comun", "compass"
+
+$color_catalogo-boton: #F89406
+$hoff_voff: 0px 0px
+$blur_spread: 5px 5px
+
+.thumbnail
+	&.lateral
+		border-color: $color_catalogo-boton
+		
+		& h3
+			@include box-shadow($color_catalogo-boton $hoff_voff $blur_spread)
+			@include opacity(0.6)
+			border-bottom: none
+			margin: 0 0 10px
+			padding-left: 1%
+			text-align: center
+			color: white
+			background-color: $color_catalogo-boton
+	
+	dd
+		padding-left: 3%
+
+h4.precio
+	padding-right: 10px
+	text-align: right
+
+img.brand
+	height: 1em
+
+aside
+	border-left: 1px solid lighten($color_catalogo-boton, 30%)
+	padding-left: 19px
+	
+	&.span4
+		width: 350px
+	
+footer
+	background-color: #F5F5F5
+	dl
+		padding: 0 10px
+
+p
+	padding: $padding-comun
+	text-align: justify
+	#licencia > &
+		text-align: center
+
+#catalogo-link 
+	margin: 14px
+	padding: 0 
+
+#catalogo-boton
+	width: 91%
+
+#licencia
+	text-align: center
+
+#copyleft
+	height: 1em
+	
+#divisora
+	margin-top: 0
