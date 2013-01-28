@@ -180,7 +180,7 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 									</dd>
 									<br />
 									<dd>
-										<a href="mailto:contacto@elefe.com.ar?subject=Asunto"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
+										<a href="mailto:contacto@elefe.com.ar?subject=Contacto desde el Sitio"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
 									</dd>
 									<br />
 									<dd>
