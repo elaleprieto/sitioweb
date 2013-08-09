@@ -1,8 +1,9 @@
 <?php $cantidad = isset($cantidad) ? $cantidad : 5; ?>
 <?php $noticias = $this -> requestAction('noticias/mostrar/' . $cantidad); ?>
-<ul class="thumbnails">
-	<li class="span4">
-		<div class="thumbnail lateral">
+<!-- <ul class="thumbnails"> -->
+<div class="row">
+	<!-- <li class="span4"> -->
+		<div class="col-lg-12 thumbnail lateral">
  			<h3 class="muted">Noticias</h3>
 			<table class="table table-striped">
 				<thead>
@@ -21,5 +22,6 @@
 				</tbody>
 			</table>
 		</div>
-	</li>
-</ul>
+	<!-- </li> -->
+<!-- </ul> -->
+</div>
