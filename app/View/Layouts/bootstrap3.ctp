@@ -68,8 +68,7 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 						<span class="icon-bar"></span>
 					</button>
 					<!-- </a> -->
-					<!-- <a class="brand" href="#">Trama Tierra</a> -->
-					<?=$this->Html->image('logo.svg', array('class' => 'navbar-brand')); ?>
+					<?=$this->Html->image('logo.svg', array('class' => 'brand navbar-brand')); ?>
 					<?=$this->Html->link('ELEFE', '/', array('class' => 'navbar-brand')) ?>
 					<div class="nav-collapse collapse">
 						<!-- <ul class="nav"> -->
@@ -102,14 +101,18 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 			<?php echo $this->Session->flash(); ?>
 
 			<div class="row">
-				<div class="span8">
+				<!-- <div class="span8"> -->
+				<div class="col-lg-8">
 					<?php echo $this->fetch('content'); ?>
 				</div>
-				<aside class="span4">
+				<!-- <aside class="span4"> -->
+				<aside class="col-lg-4">
 					<!-- Contacto	 -->
-					<ul class="thumbnails">
-						<li class="span4">
-							<div class="thumbnail lateral">
+					<!-- <ul class="thumbnails"> -->
+					<div class="row">
+						<!-- <li class="span4"> -->
+						<!-- <li class="col-lg-4"> -->
+							<div class="col-lg-12 thumbnail lateral">
 								<h3>Contáctenos</h3>
 								<dl>
 									<dd title="Teléfono">
@@ -134,12 +137,16 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 									</dd>
 								</dl>
 							</div>
-						</li>
-					</ul>
+						<!-- </li> -->
+					<!-- </ul> -->
+					</div>
+					
 					<!-- Catálogo	 -->
-					<ul class="thumbnails">
-						<li class="span4">
-							<div class="thumbnail lateral">
+					<!-- <ul class="thumbnails"> -->
+					<div class="row">
+						<!-- <li class="span4"> -->
+						<!-- <li class="col-lg-4"> -->
+							<div class="col-lg-12 thumbnail lateral">
 								<p id="catalogo-link">
 									<?
 									echo $this->Html->link('<i class="icon-download-alt icon-white"></i> Descargar Catálogo'
@@ -152,8 +159,9 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
  									?>
  								</p>
 							</div>
-						</li>
-					</ul>
+						<!-- </li> -->
+					<!-- </ul> -->
+					</div>
 					<!-- Noticias	 -->
 					<?php echo $this->element('noticias', array("cantidad" => 5)); ?>
 				</aside>
@@ -162,7 +170,8 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 			<hr />
 			<footer>
 				<div class="row">
-					<div id="licencia" class="span12">
+					<!-- <div id="licencia" class="span12"> -->
+					<div id="licencia" class="col-lg-12">
 						<p>
 							<?php echo $this->Html->link($this->Html->image('copyleft_30.png', array(
 								'alt' => $appDescription,
