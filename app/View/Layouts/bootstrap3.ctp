@@ -167,7 +167,45 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 				</aside>
 			</div>
 			<!-- 			</div> -->
+			
+			<section class="row">
+				
+				<!-- Noticias	 -->
+				<article class="col-lg-5 col-lg-offset-1">
+					<?php echo $this->element('noticias', array("cantidad" => 5)); ?>
+				</article>
+				
+				<!-- Contacto	 -->
+				<article class="col-lg-4 col-lg-offset-1 thumbnail lateral">
+					<h3>Contáctenos</h3>
+					<dl>
+						<dd title="Teléfono">
+							<i class="icon-headphones"></i> (+54) (0342) 452-4057
+						</dd>
+						<dd title="Fax">
+							<i class="icon-print"></i> (+54) (0342) 453-3994
+						</dd>
+						<br />
+						<dd>
+							<a href="mailto:contacto@elefe.com.ar?subject=Contacto desde el Sitio"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
+						</dd>
+						<br />
+						<dd>
+							<i class="icon-map-marker"></i> San Lorenzo 2357
+						</dd>
+						<dd>
+							<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
+						</dd>
+						<dd>
+							<i class="icon-map-marker"></i> Argentina
+						</dd>
+					</dl>
+				</article>
+
+			</section>
+			
 			<hr />
+			
 			<footer>
 				<div class="row">
 					<!-- <div id="licencia" class="span12"> -->
