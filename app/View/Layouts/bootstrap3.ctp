@@ -34,18 +34,16 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		</title>
 		<meta name="description" content="La empresa ELEFE es una Distribuidora Mayorista de Artículos para Ferreterías.">
 		<meta name="viewport" content="width=device-width">
-		<style>
-			body {
-				padding-top: 60px;
-				padding-bottom: 40px;
-			}
-		</style>
+		
+		<!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
 		<?php
 		echo $this->Html->meta('icon');
 		echo $this->fetch('meta');
 		
 		# Estilos
-		echo $this->Html->css(array('bootstrap3.0rc1.min', 'bootstrap-responsive.min', 'default'));
+		echo $this->Html->css(array('bootstrap3.0rc1.min', 'default'));
 		echo $this->fetch('css');
 		
 		# Modernizr
@@ -58,118 +56,66 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		<![endif]-->
 
 		<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<!-- <div class="navbar-inner"> -->
-				<div class="container">
-					<!-- <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> -->
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- </a> -->
-					<?=$this->Html->image('logo.svg', array('class' => 'brand navbar-brand')); ?>
-					<?=$this->Html->link('ELEFE', '/', array('class' => 'navbar-brand')) ?>
-					<div class="nav-collapse collapse">
-						<!-- <ul class="nav"> -->
-						<ul class="nav navbar-nav">
-							<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'inicio') ? 'class="active"' : 'class=""' ?>>
-								<?=$this->Html->link('Inicio', '/') ?>
-							</li>
-							<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'empresa') ? 'class="active"' : 'class=""' ?>>
-								<?=$this->Html->link('Empresa', '/empresa') ?>
-							</li>
-							<li>
-								<?=$this->Html->link('Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1') ?>
-							</li>
-							<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'contacto') ? 'class="active"' : 'class=""' ?>>
-								<?=$this->Html->link('Contacto', '/contacto') ?>
-							</li>
-						</ul>
-					</div><!--/.nav-collapse -->
-				</div>
-			<!-- </div> -->
-		</div>
 		
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!-- </a> -->
+				<?=$this->Html->image('logo.svg', array('class' => 'brand navbar-brand')); ?>
+				<?=$this->Html->link('ELEFE', '/', array('class' => 'navbar-brand')) ?>
+				<div class="nav-collapse collapse">
+					<!-- <ul class="nav"> -->
+					<ul class="nav navbar-nav">
+						<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'inicio') ? 'class="active"' : 'class=""' ?>>
+							<?=$this->Html->link('Inicio', '/') ?>
+						</li>
+						<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'empresa') ? 'class="active"' : 'class=""' ?>>
+							<?=$this->Html->link('Empresa', '/empresa') ?>
+						</li>
+						<li>
+							<?=$this->Html->link('Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1') ?>
+						</li>
+						<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'contacto') ? 'class="active"' : 'class=""' ?>>
+							<?=$this->Html->link('Contacto', '/contacto') ?>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+
+		<section id="ofertasCarrusel">
+			<div class="col-lg-12">
+				<?php echo $this->fetch('content'); ?>
+			</div>
+		</section>
 
 		<div class="container">
-			<!-- <div id="header">
-			<h1><?php echo $this->Html->link($appDescription, 'http://elefe.com.ar'); ?></h1>
-			</div> -->
-			<!-- 			<div id="content"> -->
-
-			<?php echo $this->Session->flash(); ?>
-
-			<div class="row">
-				<!-- <div class="span8"> -->
-				<div class="col-lg-8">
-					<?php echo $this->fetch('content'); ?>
-				</div>
-				<!-- <aside class="span4"> -->
-				<aside class="col-lg-4">
-					<!-- Contacto	 -->
-					<!-- <ul class="thumbnails"> -->
-					<div class="row">
-						<!-- <li class="span4"> -->
-						<!-- <li class="col-lg-4"> -->
-							<div class="col-lg-12 thumbnail lateral">
-								<h3>Contáctenos</h3>
-								<dl>
-									<dd title="Teléfono">
-										<i class="icon-headphones"></i> (+54) (0342) 452-4057
-									</dd>
-									<dd title="Fax">
-										<i class="icon-print"></i> (+54) (0342) 453-3994
-									</dd>
-									<br />
-									<dd>
-										<a href="mailto:contacto@elefe.com.ar?subject=Contacto desde el Sitio"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
-									</dd>
-									<br />
-									<dd>
-										<i class="icon-map-marker"></i> San Lorenzo 2357
-									</dd>
-									<dd>
-										<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
-									</dd>
-									<dd>
-										<i class="icon-map-marker"></i> Argentina
-									</dd>
-								</dl>
-							</div>
-						<!-- </li> -->
-					<!-- </ul> -->
-					</div>
-					
-					<!-- Catálogo	 -->
-					<!-- <ul class="thumbnails"> -->
-					<div class="row">
-						<!-- <li class="span4"> -->
-						<!-- <li class="col-lg-4"> -->
-							<div class="col-lg-12 thumbnail lateral">
-								<p id="catalogo-link">
-									<?
-									echo $this->Html->link('<i class="icon-download-alt icon-white"></i> Descargar Catálogo'
-										, 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1'
-										, array('escape' => false
-											, 'class' => 'btn btn-warning btn-large'
-											, 'id' => 'catalogo-boton'
-										)
-									);
- 									?>
- 								</p>
-							</div>
-						<!-- </li> -->
-					<!-- </ul> -->
-					</div>
-					<!-- Noticias	 -->
-					<?php echo $this->element('noticias', array("cantidad" => 5)); ?>
-				</aside>
-			</div>
-			<!-- 			</div> -->
+			<?php //echo $this->Session->flash(); ?>
+			
+			<section>
+				<div class="jumbotron">
+					<em class="text-center text-italic text-muted"><small>Te presentamos nuestro...</small></em>
+					<h1 class="text-center"><strong>¡Catálogo de Productos!</strong></h1>
+					<p class="text-center text-muted">
+						Ahora podés descargar nuestro catálogo de productos con fotografías en la mejor calidad.
+					</p>
+					<p class="text-center text-muted lead">
+						Hemos subido a la nube nuestro catálogo con más de 2000 productos para que lo tengas disponible siempre, en cualquier lugar y en cualquier dispositivo.
+					</p>
+					<p class="text-center">
+						<a class="btn btn-warning btn-lg"
+							href="https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1">
+							<i class="icon-cloud-download"></i> Descargar Catálogo
+						</a>
+	 				</p>
+	 			</div>
+			</section>
 			
 			<section class="row">
-				
 				<!-- Noticias	 -->
 				<article class="col-lg-5 col-lg-offset-1">
 					<?php echo $this->element('noticias', array("cantidad" => 5)); ?>
@@ -201,38 +147,32 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 						</dd>
 					</dl>
 				</article>
-
 			</section>
 			
-			<hr />
-			
-			<footer>
-				<div class="row">
-					<!-- <div id="licencia" class="span12"> -->
-					<div id="licencia" class="col-lg-12">
-						<p>
-							<?php echo $this->Html->link($this->Html->image('copyleft_30.png', array(
-								'alt' => $appDescription,
-								'border' => '0',
-								'id' => 'copyleft'
-							)), 'http://www.elefe.com.ar/', array(
-								'target' => '_blank',
-								'escape' => false
-							));
- ?>
-							Copyleft 2012. Sistema desarrollado completamente con Software Libre y respetando los estándares internacionales.
-						</p>
-						<p>
-							<a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img alt="Licencia Creative Commons" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
-							El contenido de esta web est&aacute; sujeto a una licencia de Creative Commons si no se indica lo contrario.
-							<a href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a> es realizado por <a cc="http://creativecommons.org/ns#" href="http://colectivolibre.com.ar" property="attributionName" rel="attributionURL">Colectivo Libre</a> y se encuentra bajo una Licencia <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Atribuci&oacute;n 3.0 Unported</a>.
-							Basada en la obra <a dct="http://purl.org/dc/terms/" href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a>.
-							Permisos que vayan m&aacute;s all&aacute; de lo cubierto por esta licencia pueden encontrarse en <a cc="http://creativecommons.org/ns#" href="http://elefe.com.ar" rel="morePermissions">http://elefe.com.ar/licencia</a>. Las fotos y los precios de las ofertas, son ilustrativos y orientativos. No se aceptarán devoluciones por la mercadería en oferta. La finalización de las ofertas está sujeta sólo a la decisión de la empresa, por más que la publicación no se haya retirado de este sitio.
-						</p>
-					</div>
-				</div>
-			</footer>
 		</div><!-- /container -->
+		<footer>
+			<div id="licencia" class="col-lg-12">
+				<p>
+					<?php 
+					echo $this->Html->image('copyleft_30.png', array('alt' => $appDescription
+						, 'border' => '0'
+						, 'id' => 'copyleft'
+						)
+					);
+					?>
+					Copyleft 2012. Sistema desarrollado completamente con Software Libre y respetando los estándares internacionales.
+				</p>
+				<p>
+					<a href="http://creativecommons.org/licenses/by/3.0/" rel="license">
+						<img alt="Licencia Creative Commons" src="http://i.creativecommons.org/l/by/3.0/88x31.png" />
+					</a>
+					El contenido de esta web est&aacute; sujeto a una licencia de Creative Commons si no se indica lo contrario.
+					<a href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a> es realizado por <a cc="http://creativecommons.org/ns#" href="http://colectivolibre.com.ar" property="attributionName" rel="attributionURL">Colectivo Libre</a> y se encuentra bajo una Licencia <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Atribuci&oacute;n 3.0 Unported</a>.
+					Basada en la obra <a dct="http://purl.org/dc/terms/" href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a>.
+					Permisos que vayan m&aacute;s all&aacute; de lo cubierto por esta licencia pueden encontrarse en <a cc="http://creativecommons.org/ns#" href="http://elefe.com.ar" rel="morePermissions">http://elefe.com.ar/licencia</a>. Las fotos y los precios de las ofertas, son ilustrativos y orientativos. No se aceptarán devoluciones por la mercadería en oferta. La finalización de las ofertas está sujeta sólo a la decisión de la empresa, por más que la publicación no se haya retirado de este sitio.
+				</p>
+			</div>
+		</footer>
 
 		<?php echo $this->element('sql_dump'); ?>
 

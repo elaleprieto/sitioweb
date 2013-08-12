@@ -1,8 +1,97 @@
-/* line 8, ../sass/default.sass */
+/* line 9, ../sass/default.sass */
+article {
+  margin: 30px 0;
+}
+
+/* line 12, ../sass/default.sass */
+aside {
+  border-left: 1px solid #fdd49a;
+  padding-left: 19px;
+}
+/* line 16, ../sass/default.sass */
+aside.span4 {
+  width: 350px;
+}
+
+/* line 22, ../sass/default.sass */
+footer > div {
+  background-color: #333333;
+  color: #999999;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+/* line 28, ../sass/default.sass */
+footer > div dl {
+  padding: 0 10px;
+}
+
+/* line 31, ../sass/default.sass */
+h4.precio {
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* line 35, ../sass/default.sass */
+img.brand {
+  height: 50px;
+  padding-bottom: 0;
+  padding-top: 5px;
+}
+
+/* line 40, ../sass/default.sass */
+p {
+  padding: 0 15px;
+  text-align: justify;
+}
+/* line 43, ../sass/default.sass */
+#licencia > p {
+  text-align: center;
+}
+
+/* line 46, ../sass/default.sass */
+section {
+  min-height: 500px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  /* line 52, ../sass/default.sass */
+  section {
+    height: auto;
+    min-height: 100px;
+  }
+}
+/* line 56, ../sass/default.sass */
+.navbar-brand {
+  display: inline-block;
+}
+
+/* line 59, ../sass/default.sass */
+.carousel-control.left, .carousel-control.right {
+  background-image: none;
+}
+
+/* line 62, ../sass/default.sass */
+.carousel-inner > .item {
+  height: 400px;
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  /* line 67, ../sass/default.sass */
+  .carousel-inner > .item {
+    height: auto;
+    min-height: auto;
+    padding-bottom: 30px;
+  }
+}
+/* line 73, ../sass/default.sass */
 .thumbnail.lateral {
   border-color: #f89406;
 }
-/* line 11, ../sass/default.sass */
+/* line 76, ../sass/default.sass */
 .thumbnail.lateral h3 {
   -webkit-box-shadow: #f89406 0px 0px 5px 5px;
   -moz-box-shadow: #f89406 0px 0px 5px 5px;
@@ -16,73 +105,40 @@
   color: white;
   background-color: #f89406;
 }
-/* line 21, ../sass/default.sass */
+/* line 86, ../sass/default.sass */
 .thumbnail dd {
   padding-left: 3%;
 }
 
-/* line 24, ../sass/default.sass */
-h4.precio {
-  padding-right: 10px;
-  text-align: right;
-}
-
-/* line 28, ../sass/default.sass */
-img.brand {
-  height: 1em;
-}
-
-/* line 31, ../sass/default.sass */
-aside {
-  border-left: 1px solid #fdd49a;
-  padding-left: 19px;
-}
-/* line 35, ../sass/default.sass */
-aside.span4 {
-  width: 350px;
-}
-
-/* line 38, ../sass/default.sass */
-footer {
-  background-color: whitesmoke;
-}
-/* line 40, ../sass/default.sass */
-footer dl {
-  padding: 0 10px;
-}
-
-/* line 43, ../sass/default.sass */
-p {
-  padding: 0 15px;
-  text-align: justify;
-}
-/* line 46, ../sass/default.sass */
-#licencia > p {
-  text-align: center;
-}
-
-/* line 49, ../sass/default.sass */
+/* line 90, ../sass/default.sass */
 #catalogo-link {
   margin: 14px;
   padding: 0;
 }
 
-/* line 53, ../sass/default.sass */
+/* line 94, ../sass/default.sass */
 #catalogo-boton {
   width: 91%;
 }
 
-/* line 56, ../sass/default.sass */
+/* line 97, ../sass/default.sass */
 #licencia {
   text-align: center;
 }
 
-/* line 59, ../sass/default.sass */
+/* line 100, ../sass/default.sass */
 #copyleft {
   height: 1em;
 }
 
-/* line 62, ../sass/default.sass */
+/* line 103, ../sass/default.sass */
 #divisora {
   margin-top: 0;
+}
+
+/* line 107, ../sass/default.sass */
+#ofertasCarrusel {
+  background-image: url("/img/tramas/COLOURlovers.com-ocean_of_peace01.png");
+  margin-top: 50px;
+  padding-top: 20px;
 }

@@ -1,8 +1,73 @@
 @import "comun", "compass"
 
 $color_catalogo-boton: #F89406
+$colorFuenteSinFocus: #999999
+$colorNavYFooter: #333333
 $hoff_voff: 0px 0px
 $blur_spread: 5px 5px
+
+article
+	margin: 30px 0
+
+aside
+	border-left: 1px solid lighten($color_catalogo-boton, 30%)
+	padding-left: 19px
+	
+	&.span4
+		width: 350px
+
+// body
+	// padding-top: 50px
+
+footer > div
+	background-color: $colorNavYFooter
+	color: $colorFuenteSinFocus
+	margin-top: 50px
+	padding-bottom: 30px
+	padding-top: 20px
+	dl
+		padding: 0 10px
+
+h4.precio
+	padding-right: 10px
+	text-align: right
+
+img.brand
+	height: 50px
+	padding-bottom: 0
+	padding-top: 5px
+
+p
+	padding: $padding-comun
+	text-align: justify
+	#licencia > &
+		text-align: center
+
+section
+	min-height: 500px
+	margin-bottom: 20px
+	margin-top: 20px
+	
+@media (max-width: 768px)
+	section
+		height: auto
+		min-height: 100px
+
+.navbar-brand
+	display: inline-block
+
+.carousel-control.left, .carousel-control.right
+	background-image: none
+
+.carousel-inner > .item
+	height: 400px
+	padding-top: 20px
+	
+@media (max-width: 768px)
+	.carousel-inner > .item
+		height: auto
+		min-height: auto
+		padding-bottom: 30px
 
 .thumbnail
 	&.lateral
@@ -21,30 +86,6 @@ $blur_spread: 5px 5px
 	dd
 		padding-left: 3%
 
-h4.precio
-	padding-right: 10px
-	text-align: right
-
-img.brand
-	height: 1em
-
-aside
-	border-left: 1px solid lighten($color_catalogo-boton, 30%)
-	padding-left: 19px
-	
-	&.span4
-		width: 350px
-	
-footer
-	background-color: #F5F5F5
-	dl
-		padding: 0 10px
-
-p
-	padding: $padding-comun
-	text-align: justify
-	#licencia > &
-		text-align: center
 
 #catalogo-link 
 	margin: 14px
@@ -61,3 +102,10 @@ p
 	
 #divisora
 	margin-top: 0
+	
+
+#ofertasCarrusel
+	background-image: url("/img/tramas/COLOURlovers.com-ocean_of_peace01.png")
+	margin-top: 50px
+	padding-top: 20px
+	
