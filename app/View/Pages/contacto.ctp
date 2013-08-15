@@ -1,79 +1,87 @@
 <?php
 # Librerías JavaScript
-echo $this -> Html -> script('contacto', array('inline' => FALSE, 'cache' => TRUE));
+echo $this->Html->script('contacto', array('inline' => FALSE, 'cache' => TRUE));
 # Se define la ruta base
-echo $this -> Html -> scriptBlock('WEBROOT="' . $this -> Html -> url('/', true) . '"', $options = array('inline' => true));
+echo $this->Html->scriptBlock('WEBROOT="' . $this->Html->url('/', true) . '"', $options = array('inline' => true));
 # Librerías CSS
-echo $this -> Html -> css('contacto', NULL, array('inline' => FALSE, 'cache' => TRUE));
+echo $this->Html->css('contacto', NULL, array('inline' => FALSE, 'cache' => TRUE));
 ?>
-<div class="row">
-	<div class="span7">
-		<h1><?=$this -> Html -> image('logo.svg', array('class' => 'brand')); ?>
-		ELEFE <small>Artículos para Ferreterías</small></h1>
+
+<section class="container">
+	
+	<!-- Título -->
+	<div class="row">
+		<div class="col-lg-11">
+			<h1>
+				<?php //echo $this->Html->image('logo.svg', array('class' => 'brand')); ?>
+				<!-- <i class="icon-envelope-alt"></i> -->
+				<!-- <small><i class="icon-envelope-alt"></i></small> -->
+				<!-- <small>Dejanos tu consulta o sugerencia...</small> -->
+				Dejanos tu consulta y/o sugerencia...
+			</h1>
+		</div>
+		<div id="div-correo" class="col-lg-1">
+			<?=$this->Html->image('email.png', array('class' => 'imagen-correo pull-right', 'id' => 'imagen-correo')); ?>
+		</div>
 	</div>
-	<div id="div-correo" class="span1">
-		<?=$this -> Html -> image('email.png', array('class' => 'imagen-correo pull-right', 'id' => 'imagen-correo')); ?>
+	
+	<!-- Mensaje para el usuario una vez que envió el correo -->
+	<div id="mensaje" class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">
+			&times;
+		</button>
+		<h4>¡Muchas Gracias!</h4>
+		Hemos recibido tu consulta, en breve te responderemos...
 	</div>
-</div>
-<div id="mensaje" class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <h4>¡Muchas Gracias!</h4>
-    Hemos recibido tu consulta, en breve te responderemos...
-</div>
-<hr id="divisora" />
-<div class="row">
-	<div class="span8">
-		<?php
-        echo $this -> Form -> create('Contacto', array('id' => 'formulario', 'class' => 'form-horizontal'));
-
-        # Nombre
-        $inputNombre = $this -> Form -> input('nombre', array(
-            'label' => FALSE,
-            'id' => 'nombre',
-            'div' => 'controls',
-            'class' => 'span4'
-        ));
-        $labelNombre = $this -> Form -> label('Nombre', 'Nombre', array('class' => 'control-label'));
-        echo $this -> Html -> div('control-group', $labelNombre . $inputNombre, array('id' => 'controlGroupNombre'));
-
-        # Email
-        $inputEmail = $this -> Form -> input('correo', array(
-            'label' => FALSE,
-            'id' => 'correo',
-            'div' => 'controls',
-            'class' => 'span4'
-        ));
-        $labelEmail = $this -> Form -> label('Correo', 'Correo electrónico', array('class' => 'control-label'));
-        echo $this -> Html -> div('control-group', $labelEmail . $inputEmail, array('id' => 'controlGroupCorreo'));
-
-        # Mensaje
-        $inputMensaje = $this -> Form -> input('consulta', array(
-            'label' => FALSE,
-            'id' => 'consulta',
-            'div' => 'controls',
-            'class' => 'span4',
-            'type' => 'textarea',
-            'rows' => '5'
-        ));
-        $labelMensaje = $this -> Form -> label('Consulta', 'Consulta', array('class' => 'control-label'));
-        echo $this -> Html -> div('control-group', $labelMensaje . $inputMensaje, array('id' => 'controlGroupConsulta'));
-
-        # Botones
-        $botonEnviar = $this -> Form -> button('Enviar Consulta', array(
-            'type' => 'submit',
-            'div' => FALSE,
-            'class' => 'btn btn-primary',
-        ));
-        $botonBorrar = $this -> Form -> button('Borrar', array(
-            'type' => 'reset',
-            'div' => FALSE,
-            'class' => 'btn',
-        ));
-        $divEnviando = $this->Html->div('div-enviando-hide', '<i id="icon-enviando" class="icon-refresh"></i> Enviando...', array(
-            'id' => 'div-enviando',
-        ));
-        echo $this -> Html -> div('form-actions', $botonEnviar . ' ' . $botonBorrar . ' ' . $divEnviando);
-        echo $this -> Form -> end();
-		?>
+	
+	<hr id="divisora" />
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<form action="/contacto" id="formulario" class="form-horizontal" method="post" accept-charset="utf-8">
+				<div class="form-group">
+					
+					<!-- Nombre -->
+					<label for="nombre" class="col-lg-2 control-label">Nombre</label>
+					<div class="col-lg-6">
+						<input name="data[Contacto][nombre]" id="nombre" class="form-control" 
+							placeholder="Ingrese su nombre" type="text">
+					</div>
+				</div>
+				
+				<!-- Correo electrónico -->
+				<div class="form-group">
+					<label for="correo" class="col-lg-2 control-label">Correo electrónico</label>
+					<div class="col-lg-6">
+						<input name="data[Contacto][correo]" id="correo" class="form-control" 
+							placeholder="Ingrese una dirección de respuesta" type="text">
+					</div>
+				</div>
+				
+				<!-- Mensaje -->
+				<div class="form-group">
+					<label for="consulta" class="col-lg-2 control-label">Mensaje</label>
+					<div class="col-lg-6">
+						<textarea class="form-control" id="consulta" name="data[Contacto][consulta]" 
+							placeholder="Ingrese un mensaje" rows="3"></textarea>
+					</div>
+				</div>
+				
+				<!-- Controles -->
+				<div class="form-group">
+					<div class="col-lg-offset-2 col-lg-10">
+						<button type="submit" class="btn btn-primary">
+							Enviar Consulta
+						</button>
+						<button type="reset" class="btn">
+							Borrar
+						</button>
+						<div id="div-enviando" class="div-enviando-hide">
+							<i id="icon-enviando" class="icon-refresh"></i> Enviando...
+						</div>
+					</div>
+				</div>
+			</form>		
+		</div>
 	</div>
-</div>
+</section>

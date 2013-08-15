@@ -3,69 +3,26 @@ echo $this -> Html -> css('ofertas_carrusel', NULL, array('inline' => FALSE));
 $cantidad = isset($cantidad) ? $cantidad : 5;
 $ofertas = $this -> requestAction('ofertas/mostrar/' . $cantidad);
 $i = 0;
-// debug($ofertas);
 ?>
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide text-center">
+    <!-- Indicators -->
+  <ol class="carousel-indicators">
+	<?php foreach ($ofertas as $oferta): ?>
+	    <li data-target="#myCarousel" data-slide-to="<?= $i ?>" <?php if($i==0) echo 'class="active"' ?>></li>
+        <?php $i++ ?>
+    <?php endforeach; ?>
+  </ol>
+    
     <!-- Carousel items -->
     <div class="carousel-inner">
+        <?php $i = 0 ?>
         <?php foreach ($ofertas as $oferta): ?>
             <div class="<?= $i==0 ? 'item active' : 'item' ?>">
                 <?= $this -> Html -> image("ofertas/" . $oferta['Oferta']['foto'], array('class' => 'ofertaItem')); ?>
-                <div class="carousel-caption">
-                    <h4><small>¡Oferta!</small> <?= $oferta['Oferta']['title']; ?></h4>
-                    <p>
-                        <?= $oferta['Oferta']['descripcion']; ?>
-                    </p>
-                    <?php if($oferta['Oferta']['unidad'] !== ''  && $oferta['Oferta']['unidad'] !== NULL): ?>
-                        <p>
-                            <b>Unidad:</b> <?=$oferta['Oferta']['unidad']?>
-                        </p>
-                    <?php endif ?>
-                    <?php if($oferta['Oferta']['pack'] !== '' && $oferta['Oferta']['pack'] !== NULL): ?>
-                        <p>
-                            <b>Pack:</b> <?=$oferta['Oferta']['pack']?>
-                        </p>
-                    <?php endif ?>
-                    <?php if($oferta['Oferta']['colores'] !== ''): ?>
-                        <p>
-                            <b>Colores:</b> <?=$oferta['Oferta']['colores']?>
-                        </p>
-                    <?php endif ?>
-                    <?php if($oferta['Oferta']['medidas'] !== ''): ?>
-                        <p>
-                            <b>Medidas:</b> <?=$oferta['Oferta']['medidas']?>
-                        </p>
-                    <?php endif ?>
-                    <?php if($oferta['Oferta']['materiales'] !== ''): ?>
-                        <p>
-                            <b>Materiales:</b> <?=$oferta['Oferta']['materiales']?>
-                        </p>
-                    <?php endif ?>
-                    <?php if($oferta['Oferta']['otros'] !== ''): ?>
-                        <p>
-                            <b>Otros:</b> <?=$oferta['Oferta']['otros']?>
-                        </p>
-                    <?php endif ?>
-                    <?php $condiciones = array(
-                            'before' => '$ ',
-                            'thousands' => '.',
-                            'decimals' => ',',
-                            'zero' => 'Consultar'
-                        );
-                    ?>
-                    <h4 class="precio">Precio Unitario desde: <?= $this -> Number -> currency($oferta['Oferta']['precio'], 'USD', $condiciones); ?></h4>
-                    <h4 class="precio">(IVA incl.)</h4>
-                </div>
             </div>
         <?php $i++ ?>
         <?php endforeach; ?>
     </div>
-    
-    
-    <!-- Carousel nav -->
-    <!-- <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> -->
-    
     
 	<!-- Controls -->
 	<a class="left carousel-control" href="#myCarousel" data-slide="prev">

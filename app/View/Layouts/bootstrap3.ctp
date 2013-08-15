@@ -1,23 +1,3 @@
-<?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       Cake.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-
-$appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -29,8 +9,8 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 	<head>
 		<?php echo $this->Html->charset(); ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title> <?php echo $appDescription ?>:
-			<?php echo $title_for_layout; ?>
+		<title> 
+			ELEFE :: Artículos para Ferreterías :: <?php echo $title_for_layout; ?>
 		</title>
 		<meta name="description" content="La empresa ELEFE es una Distribuidora Mayorista de Artículos para Ferreterías.">
 		<meta name="viewport" content="width=device-width">
@@ -50,111 +30,112 @@ $appDescription = __d('app_dev', 'ELEFE - Artículos para Ferreterías');
 		echo $this->Html->script('vendor/modernizr-2.6.1-respond-1.1.0.min');
 		?>
 	</head>
-	<body>
+	<body  data-spy="scroll" data-target="#navbar-principal">
 		<!--[if lt IE 7]>
-		<p class="chromeframe">Ud. posee un navegador desactualizado. <a href="http://browsehappy.com/">Actualice su navegador</a>.</p>
+			<p class="chromeframe">
+				Ud. posee un navegador desactualizado. <a href="http://browsehappy.com/">Actualice su navegador</a>.
+			</p>
 		<![endif]-->
 
-		<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-		
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-principal">
 			<div class="container">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<!-- </a> -->
 				<?=$this->Html->image('logo.svg', array('class' => 'brand navbar-brand')); ?>
-				<?=$this->Html->link('ELEFE', '/', array('class' => 'navbar-brand')) ?>
 				<div class="nav-collapse collapse">
-					<!-- <ul class="nav"> -->
 					<ul class="nav navbar-nav">
-						<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'inicio') ? 'class="active"' : 'class=""' ?>>
-							<?=$this->Html->link('Inicio', '/') ?>
-						</li>
-						<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'empresa') ? 'class="active"' : 'class=""' ?>>
-							<?=$this->Html->link('Empresa', '/empresa') ?>
+						<?php if($page == 'inicio'): ?>
+							<li class="active">
+								<a href="#ofertas"><i class="icon-home"></i> Inicio</a>
+						<?php else: ?>
+							<li>
+								<?php 
+								echo $this->Html->link('<i class="icon-home"></i> Inicio'
+									, Router::url('/').'#ofertas'
+									, array('escape' => false)
+								);
+								?>
+						<?php endif	?>
 						</li>
 						<li>
-							<?=$this->Html->link('Catálogo', 'https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1') ?>
+							<?php
+							if($page == 'inicio'):
+								echo '<a href="#catalogo"><i class="icon-cloud-download"></i> Catálogo</a>';
+							else:
+								echo $this->Html->link('<i class="icon-cloud-download"></i> Catálogo'
+									, Router::url('/').'#catalogo'
+									, array('escape' => false)
+								);
+							endif;
+							?>
 						</li>
-						<li <?=($this->request->controller == 'pages' && $this->request->action == 'display' && $this->request->pass[0] == 'contacto') ? 'class="active"' : 'class=""' ?>>
-							<?=$this->Html->link('Contacto', '/contacto') ?>
+						<li>
+							<?php
+							if($page == 'inicio'):
+								echo '<a href="#info"><i class="icon-calendar"></i> Novedades</a>';
+							else:
+								echo $this->Html->link('<i class="icon-calendar"></i> Novedades'
+									, Router::url('/').'#info'
+									, array('escape' => false)
+								);
+							endif;
+							?>
+						</li>
+						<li>
+							<?php
+							if($page == 'inicio'):
+								echo '<a href="#empresa"><i class="icon-group"></i> Empresa</a>';
+							else:
+								echo $this->Html->link('<i class="icon-group"></i> Empresa'
+									, Router::url('/').'#empresa'
+									, array('escape' => false)
+								);
+							endif;
+							?>
 						</li>
 					</ul>
 				</div><!--/.nav-collapse -->
+				<div class="nav-collapse collapse pull-right">
+					<ul class="nav navbar-nav">
+						<li>
+							<?php
+							if($page == 'inicio'):
+								echo '<a href="#info"><i class="icon-info-sign"></i></a>';
+							else:
+								echo $this->Html->link('<i class="icon-info-sign"></i>'
+									, Router::url('/').'#info'
+									, array('escape' => false, 'title' => 'Información de contacto')
+								);
+							endif;
+							?>
+						</li>
+						<?php if($page == 'contacto'): ?>
+							<li class="active">
+						<?php else: ?>
+							<li>
+						<?php endif; ?>
+							<?php
+							echo $this->Html->link('<i class="icon-envelope-alt"></i>'
+								, Router::url('/contacto')
+								, array('escape' => false, 'title' => 'Formulario de contacto')
+							)
+							?>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
+		</nav>
 
-		<section id="ofertasCarrusel">
-			<div class="col-lg-12">
-				<?php echo $this->fetch('content'); ?>
-			</div>
-		</section>
-
-		<div class="container">
-			<?php //echo $this->Session->flash(); ?>
-			
-			<section>
-				<div class="jumbotron">
-					<em class="text-center text-italic text-muted"><small>Te presentamos nuestro...</small></em>
-					<h1 class="text-center"><strong>¡Catálogo de Productos!</strong></h1>
-					<p class="text-center text-muted">
-						Ahora podés descargar nuestro catálogo de productos con fotografías en la mejor calidad.
-					</p>
-					<p class="text-center text-muted lead">
-						Hemos subido a la nube nuestro catálogo con más de 2000 productos para que lo tengas disponible siempre, en cualquier lugar y en cualquier dispositivo.
-					</p>
-					<p class="text-center">
-						<a class="btn btn-warning btn-lg"
-							href="https://www.dropbox.com/s/l44cifwg3nl2iyl/ELEFE%20-%20Cat%C3%A1logo%20de%20Productos.pdf?dl=1">
-							<i class="icon-cloud-download"></i> Descargar Catálogo
-						</a>
-	 				</p>
-	 			</div>
-			</section>
-			
-			<section class="row">
-				<!-- Noticias	 -->
-				<article class="col-lg-5 col-lg-offset-1">
-					<?php echo $this->element('noticias', array("cantidad" => 5)); ?>
-				</article>
-				
-				<!-- Contacto	 -->
-				<article class="col-lg-4 col-lg-offset-1 thumbnail lateral">
-					<h3>Contáctenos</h3>
-					<dl>
-						<dd title="Teléfono">
-							<i class="icon-headphones"></i> (+54) (0342) 452-4057
-						</dd>
-						<dd title="Fax">
-							<i class="icon-print"></i> (+54) (0342) 453-3994
-						</dd>
-						<br />
-						<dd>
-							<a href="mailto:contacto@elefe.com.ar?subject=Contacto desde el Sitio"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
-						</dd>
-						<br />
-						<dd>
-							<i class="icon-map-marker"></i> San Lorenzo 2357
-						</dd>
-						<dd>
-							<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
-						</dd>
-						<dd>
-							<i class="icon-map-marker"></i> Argentina
-						</dd>
-					</dl>
-				</article>
-			</section>
-			
-		</div><!-- /container -->
+		<?php echo $this->fetch('content'); ?>
+		
 		<footer>
 			<div id="licencia" class="col-lg-12">
 				<p>
 					<?php 
-					echo $this->Html->image('copyleft_30.png', array('alt' => $appDescription
+					echo $this->Html->image('copyleft_30.png', array('alt' => 'ELEFE'
 						, 'border' => '0'
 						, 'id' => 'copyleft'
 						)

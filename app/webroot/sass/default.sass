@@ -1,10 +1,17 @@
 @import "comun", "compass"
 
+$altura: 200px
+$blur_spread: 5px 5px
 $color_catalogo-boton: #F89406
 $colorFuenteSinFocus: #999999
 $colorNavYFooter: #333333
+$color_historia: rgba(255, 191, 0, 0.2)
+$color_mision: rgba(205, 255, 233, 0.2)
+$color_vision: rgba(206, 255, 69, 0.5)
+$color_valores: rgba(249, 255, 154, 0.8)
 $hoff_voff: 0px 0px
-$blur_spread: 5px 5px
+
+
 
 article
 	margin: 30px 0
@@ -47,6 +54,7 @@ section
 	min-height: 500px
 	margin-bottom: 20px
 	margin-top: 20px
+	padding-top: 50px
 	
 @media (max-width: 768px)
 	section
@@ -61,7 +69,7 @@ section
 
 .carousel-inner > .item
 	height: 400px
-	padding-top: 20px
+	// padding-top: 20px
 	
 @media (max-width: 768px)
 	.carousel-inner > .item
@@ -86,7 +94,6 @@ section
 	dd
 		padding-left: 3%
 
-
 #catalogo-link 
 	margin: 14px
 	padding: 0 
@@ -94,18 +101,56 @@ section
 #catalogo-boton
 	width: 91%
 
-#licencia
-	text-align: center
-
 #copyleft
 	height: 1em
 	
 #divisora
 	margin-top: 0
-	
 
-#ofertasCarrusel
-	background-image: url("/img/tramas/COLOURlovers.com-ocean_of_peace01.png")
-	margin-top: 50px
-	padding-top: 20px
+#historia, #mision, #vision, #valores
+	height: $altura
+	padding: 0
 	
+	h3
+		@include opacity(0.6)
+		text-align: center
+		margin: 0 0 10px
+
+#historia
+	@include box-shadow($color_historia $hoff_voff $blur_spread)
+	border-color: $color_historia
+	
+	h3
+		background-color: $color_historia
+
+#licencia
+	text-align: center
+
+#mision
+	@include box-shadow($color_mision $hoff_voff $blur_spread)
+	border-color: $color_mision
+	
+	h3
+		background-color: $color_mision
+
+#ofertas
+	background-image: url("/img/tramas/COLOURlovers.com-ocean_of_peace01.png")
+	// margin-top: 50px
+	padding-top: 70px
+
+#valores-lista > li
+	padding: $padding-comun
+
+#vision
+	@include box-shadow($color_vision $hoff_voff $blur_spread)
+	border-color: $color_vision
+	
+	h3
+		background-color: $color_vision
+
+#valores
+	@include box-shadow($color_valores $hoff_voff $blur_spread)
+	border-color: $color_valores
+	
+	h3
+		background-color: $color_valores

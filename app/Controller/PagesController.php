@@ -59,6 +59,7 @@ class PagesController extends AppController {
 	public function display() {
 	    $this->response->sharable(true, 3600);
         $this->response->expires('+5 days');
+		$this->layout = 'bootstrap3';
 		
 		$path = func_get_args();
 
@@ -77,6 +78,7 @@ class PagesController extends AppController {
 		if (!empty($path[$count - 1])) {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
+		
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}

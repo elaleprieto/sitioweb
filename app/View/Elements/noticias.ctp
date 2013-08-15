@@ -4,7 +4,7 @@
 <div class="row">
 	<!-- <li class="span4"> -->
 		<div class="col-lg-12 thumbnail lateral">
- 			<h3 class="muted">Noticias</h3>
+ 			<h3 class="muted"><i class="icon-calendar"></i> Últimas Novedades</h3>
 			<table class="table table-striped">
 				<thead>
 					<tr>
