@@ -23,7 +23,8 @@
 		echo $this->fetch('meta');
 		
 		# Estilos
-		echo $this->Html->css(array('bootstrap3.0rc1.min', 'default'));
+		// echo $this->Html->css(array('bootstrap3.0rc1.min', 'default'));
+		echo $this->Html->css(array('bootstrap3.0.0.min', 'default'));
 		echo $this->fetch('css');
 		
 		# Modernizr
@@ -37,96 +38,104 @@
 			</p>
 		<![endif]-->
 
-		<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-principal">
-			<div class="container">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+		<!-- <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-principal"> -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-principal" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<?=$this->Html->image('logo.svg', array('class' => 'brand navbar-brand')); ?>
-				<div class="nav-collapse collapse">
-					<ul class="nav navbar-nav">
-						<?php if($page == 'inicio'): ?>
-							<li class="active">
-								<a href="#ofertas"><i class="icon-home"></i> Inicio</a>
-						<?php else: ?>
-							<li>
-								<?php 
-								echo $this->Html->link('<i class="icon-home"></i> Inicio'
-									, Router::url('/').'#ofertas'
-									, array('escape' => false)
-								);
-								?>
-						<?php endif	?>
-						</li>
-						<li>
-							<?php
-							if($page == 'inicio'):
-								echo '<a href="#catalogo"><i class="icon-cloud-download"></i> Catálogo</a>';
-							else:
-								echo $this->Html->link('<i class="icon-cloud-download"></i> Catálogo'
-									, Router::url('/').'#catalogo'
-									, array('escape' => false)
-								);
-							endif;
-							?>
-						</li>
-						<li>
-							<?php
-							if($page == 'inicio'):
-								echo '<a href="#info"><i class="icon-calendar"></i> Novedades</a>';
-							else:
-								echo $this->Html->link('<i class="icon-calendar"></i> Novedades'
-									, Router::url('/').'#info'
-									, array('escape' => false)
-								);
-							endif;
-							?>
-						</li>
-						<li>
-							<?php
-							if($page == 'inicio'):
-								echo '<a href="#empresa"><i class="icon-group"></i> Empresa</a>';
-							else:
-								echo $this->Html->link('<i class="icon-group"></i> Empresa'
-									, Router::url('/').'#empresa'
-									, array('escape' => false)
-								);
-							endif;
-							?>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
-				<div class="nav-collapse collapse pull-right">
-					<ul class="nav navbar-nav">
-						<li>
-							<?php
-							if($page == 'inicio'):
-								echo '<a href="#info"><i class="icon-info-sign"></i></a>';
-							else:
-								echo $this->Html->link('<i class="icon-info-sign"></i>'
-									, Router::url('/').'#info'
-									, array('escape' => false, 'title' => 'Información de contacto')
-								);
-							endif;
-							?>
-						</li>
-						<?php if($page == 'contacto'): ?>
-							<li class="active">
-						<?php else: ?>
-							<li>
-						<?php endif; ?>
-							<?php
-							echo $this->Html->link('<i class="icon-envelope-alt"></i>'
-								, Router::url('/contacto')
-								, array('escape' => false, 'title' => 'Formulario de contacto')
-							)
-							?>
-						</li>
-					</ul>
-				</div>
+				<?php 
+				echo $this->Html->link($this->Html->image('logo.svg', array('class' => 'brand navbar-brand'))
+					, Router::url('/')
+					, array('escape' => false)
+				)
+				?>
 			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<?php if($page == 'inicio'): ?>
+						<li class="active">
+							<a href="#ofertas"><i class="icon-home"></i> Inicio</a>
+					<?php else: ?>
+						<li>
+							<?php 
+							echo $this->Html->link('<i class="icon-home"></i> Inicio'
+								, Router::url('/').'#ofertas'
+								, array('escape' => false)
+							);
+							?>
+					<?php endif	?>
+					</li>
+					<li>
+						<?php
+						if($page == 'inicio'):
+							echo '<a href="#catalogo"><i class="icon-cloud-download"></i> Catálogo</a>';
+						else:
+							echo $this->Html->link('<i class="icon-cloud-download"></i> Catálogo'
+								, Router::url('/').'#catalogo'
+								, array('escape' => false)
+							);
+						endif;
+						?>
+					</li>
+					<li>
+						<?php
+						if($page == 'inicio'):
+							echo '<a href="#info"><i class="icon-calendar"></i> Novedades</a>';
+						else:
+							echo $this->Html->link('<i class="icon-calendar"></i> Novedades'
+								, Router::url('/').'#info'
+								, array('escape' => false)
+							);
+						endif;
+						?>
+					</li>
+					<li>
+						<?php
+						if($page == 'inicio'):
+							echo '<a href="#empresa"><i class="icon-group"></i> Empresa</a>';
+						else:
+							echo $this->Html->link('<i class="icon-group"></i> Empresa'
+								, Router::url('/').'#empresa'
+								, array('escape' => false)
+							);
+						endif;
+						?>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<?php
+						if($page == 'inicio'):
+							echo '<a href="#info"><i class="icon-info-sign"></i></a>';
+						else:
+							echo $this->Html->link('<i class="icon-info-sign"></i>'
+								, Router::url('/').'#info'
+								, array('escape' => false, 'title' => 'Información de contacto')
+							);
+						endif;
+						?>
+					</li>
+					<?php if($page == 'contacto'): ?>
+						<li class="active">
+					<?php else: ?>
+						<li>
+					<?php endif; ?>
+						<?php
+						echo $this->Html->link('<i class="icon-envelope-alt"></i>'
+							, Router::url('/contacto')
+							, array('escape' => false, 'title' => 'Formulario de contacto')
+						)
+						?>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
 		</nav>
 
 		<?php echo $this->fetch('content'); ?>
@@ -161,7 +170,7 @@
 		<script>
 			window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')
 		</script>
-		<?php echo $this->Html->script(array('vendor/bootstrap3.0rc1.min'));
+		<?php echo $this->Html->script(array('vendor/bootstrap3.0.0.min'));
  ?>
 		<?php echo $this->fetch('script'); ?>
 		<script>
