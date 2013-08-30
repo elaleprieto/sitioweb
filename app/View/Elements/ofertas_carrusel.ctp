@@ -1,11 +1,13 @@
 <?php
-echo $this -> Html -> css('ofertas_carrusel', NULL, array('inline' => FALSE));
+echo $this->Html->css('ofertas_carrusel', NULL, array('inline' => FALSE));
+echo $this->Html->script('ofertas', array('inline' => FALSE));
+
 $cantidad = isset($cantidad) ? $cantidad : 5;
 $ofertas = $this -> requestAction('ofertas/mostrar/' . $cantidad);
 $i = 0;
 ?>
 
-<div id="carousel" class="carousel slide text-center">
+<div id="carousel" class="carousel slide text-center" data-interval="3000">
 	<!-- Indicators -->
 	<ol class="carousel-indicators">
 		<?php foreach ($ofertas as $oferta): ?>
