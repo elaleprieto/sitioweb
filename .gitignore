@@ -17,7 +17,6 @@ app/webroot/.sass-cache/*
 /dist
 /tags
 app/Vendor/contras/*
-app/webroot/.sass-cache/*
 config/database.php
 sftp-config.json
 tmp/*
