@@ -9,7 +9,7 @@ class NoticiasController extends AppController {
 
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this -> Auth -> allow('mostrar');
+		$this -> Auth -> allow('mostrar', 'nueva');
 	}
 
 	/**
@@ -122,6 +122,28 @@ class NoticiasController extends AppController {
 				'created'
 			)
 		));
+	}
+	
+	
+	/**
+	 * nueva method
+	 *
+	 * @return void
+	 */
+	public function nueva() {
+		$this->autoRender = false;
+		$this->layout = 'ajax';
+		
+		if ($this->request->is('post')) {
+			$articulo = $this->request->input('json_decode');
+			$noticia['title'] = "Ingresaron ".$articulo->detalle;
+
+			$this->Noticia->create();
+			$this->Noticia->save($noticia);
+			return;
+		} else {
+			$this->redirect(Router::url('/'));
+		}
 	}
 
 }
