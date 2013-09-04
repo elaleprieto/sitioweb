@@ -135,12 +135,13 @@ class NoticiasController extends AppController {
 		$this->layout = 'ajax';
 		
 		if ($this->request->is('post')) {
-			$articulo = $this->request->input('json_decode');
-			$noticia['title'] = "Ingresaron ".$articulo->detalle;
-
-			$this->Noticia->create();
-			$this->Noticia->save($noticia);
-			return;
+			if(isset($this->request->data['detalle'])) {
+				$noticia['title'] = "Ingresaron ".$this->request->data['detalle'];
+	
+				$this->Noticia->create();
+				$this->Noticia->save($noticia);
+				return;
+			}
 		} else {
 			$this->redirect(Router::url('/'));
 		}
