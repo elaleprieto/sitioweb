@@ -1,3 +1,7 @@
+<?php
+header('X-UA-Compatible: IE=edge,chrome=1');
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7">	<![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8">			<![endif]-->
@@ -6,7 +10,6 @@
 <html>
 	<head>
 		<?php echo $this->Html->charset(); ?>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title> 
 			ELEFE :: Artículos para Ferreterías :: <?php echo $title_for_layout; ?>
 		</title>
@@ -143,7 +146,6 @@
 				<p>
 					<?php 
 					echo $this->Html->image('copyleft_30.png', array('alt' => 'ELEFE'
-						, 'border' => '0'
 						, 'id' => 'copyleft'
 						)
 					);
@@ -155,9 +157,9 @@
 						<img alt="Licencia Creative Commons" src="http://i.creativecommons.org/l/by/3.0/88x31.png" />
 					</a>
 					El contenido de esta web est&aacute; sujeto a una licencia de Creative Commons si no se indica lo contrario.
-					<a href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a> es realizado por <a cc="http://creativecommons.org/ns#" href="http://colectivolibre.com.ar" property="attributionName" rel="attributionURL">Colectivo Libre</a> y se encuentra bajo una Licencia <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Atribuci&oacute;n 3.0 Unported</a>.
-					Basada en la obra <a dct="http://purl.org/dc/terms/" href="http://elefe.com.ar" rel="source">ELEFE.com.ar</a>.
-					Permisos que vayan m&aacute;s all&aacute; de lo cubierto por esta licencia pueden encontrarse en <a cc="http://creativecommons.org/ns#" href="http://elefe.com.ar" rel="morePermissions">http://elefe.com.ar/licencia</a>. Las fotos y los precios de las ofertas, son ilustrativos y orientativos. No se aceptarán devoluciones por la mercadería en oferta. La finalización de las ofertas está sujeta sólo a la decisión de la empresa, por más que la publicación no se haya retirado de este sitio.
+					<a href="http://elefe.com.ar" rel="author">ELEFE.com.ar</a> es realizado por <a href="http://colectivolibre.com.ar" property="attributionName" rel="author">Colectivo Libre</a> y se encuentra bajo una Licencia <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Atribuci&oacute;n 3.0 Unported</a>.
+					Basada en la obra <a href="http://elefe.com.ar" rel="author">ELEFE.com.ar</a>.
+					Permisos que vayan m&aacute;s all&aacute; de lo cubierto por esta licencia pueden encontrarse en <a href="http://elefe.com.ar" rel="license">http://elefe.com.ar/licencia</a>. Las fotos y los precios de las ofertas, son ilustrativos y orientativos. No se aceptarán devoluciones por la mercadería en oferta. La finalización de las ofertas está sujeta sólo a la decisión de la empresa, por más que la publicación no se haya retirado de este sitio.
 				</p>
 			</div>
 		</footer>

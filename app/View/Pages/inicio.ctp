@@ -53,28 +53,31 @@
 		<!-- Contacto	 -->
 		<article class="col-lg-4 col-lg-offset-1 thumbnail lateral">
 			<h3><i class="icon-info-sign"></i> Contáctenos</h3>
-			<dl>
-				<dd title="Teléfono">
+			<p>
+				<span title="Teléfono">
 					<i class="icon-headphones"></i> (+54) (0342) 452-4057
-				</dd>
-				<dd title="Fax">
+				</span>
+				<br />
+				<span title="Fax">
 					<i class="icon-print"></i> (+54) (0342) 453-3994
-				</dd>
-				<br />
-				<dd>
-					<a href="mailto:contacto@elefe.com.ar?subject=Contacto desde el Sitio"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
-				</dd>
-				<br />
-				<dd>
+				</span>
+			</p>
+			<p>
+				<a href="mailto:contacto@elefe.com.ar?subject=Contacto%20desde%20el%20Sitio"><i class="icon-envelope"></i> contacto@elefe.com.ar</a>
+			</p>
+			<p>
+				<span>
 					<i class="icon-map-marker"></i> San Lorenzo 2357
-				</dd>
-				<dd>
+				</span>
+				<br />
+				<span>
 					<i class="icon-map-marker"></i> Santa Fe (S-3000-EUC)
-				</dd>
-				<dd>
+				</span>
+				<br />
+				<span>
 					<i class="icon-map-marker"></i> Argentina
-				</dd>
-			</dl>
+				</span>
+			</p>
 		</article>
 	</section>
 

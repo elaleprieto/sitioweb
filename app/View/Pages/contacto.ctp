@@ -1,10 +1,10 @@
 <?php
 # Librerías JavaScript
-echo $this->Html->script('contacto', array('inline' => FALSE, 'cache' => TRUE));
+echo $this->Html->script('contacto', array('inline' => FALSE));
 # Se define la ruta base
 echo $this->Html->scriptBlock('WEBROOT="' . $this->Html->url('/', true) . '"', $options = array('inline' => true));
 # Librerías CSS
-echo $this->Html->css('contacto', NULL, array('inline' => FALSE, 'cache' => TRUE));
+echo $this->Html->css('contacto', NULL, array('inline' => FALSE));
 ?>
 
 <section class="container">
